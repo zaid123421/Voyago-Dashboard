@@ -16,14 +16,11 @@ import UserDetails from "./Pages/User/UserDetails";
 import Transactions from "./Pages/Transactions/Transactions";
 import Attractions from "./Pages/Attractions/Attractions";
 import Reservations from "./Pages/Reservations/Reservations";
-import Deposit from "./Pages/Transactions/TransactionRequests";
 import AddTrip from "./Pages/Trips/AddTrip";
 import AddDestination from "./Pages/Destinations/adddestination";
-import RequireAuth from "./Pages/Auth/RequireAuth";
-import PresistLogin from "./Pages/Auth/PresistLogin";
-import Authorization from "./Pages/Authorization";
-import { useContext } from "react";
-import { User } from "./Pages/Context";
+// import RequireAuth from "./Pages/Auth/RequireAuth";
+// import PresistLogin from "./Pages/Auth/PresistLogin";
+// import Authorization from "./Pages/Authorization";
 import AddAttraction from "./Pages/Attractions/AddAttraction";
 import DestinationDetails from "./Pages/Destinations/destinationDetails";
 import TransactionRequests from "./Pages/Transactions/TransactionRequests";
@@ -32,8 +29,9 @@ import Requests from "./Pages/Requests";
 
 export default function App() {
   return (
-    <div>
-      <Routes>
+    <div style={{color: "white"}}>
+      qwewqewq
+      <Routes basename="/Voyago-Dashboard">
         <Route path = "/" element = {<Login />} />
         <Route path = "/forgotpassword" element = {<ForgotPassword />} />
         <Route path = "/superadmincode" element = {<SuperAdminCode />} />
@@ -60,7 +58,7 @@ export default function App() {
             <Route path = "transactions" element = {<Transactions />} />
             <Route path = "transactionrequests" element = {<TransactionRequests />} />
             <Route path = "requests" element = {<Requests />} />
-{/* ظ          </Route> */}
+          {/* </Route> */}
         {/* </Route> */}
       </Routes>
     </div>

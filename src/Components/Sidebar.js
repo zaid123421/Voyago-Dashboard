@@ -17,13 +17,11 @@ export default function Sidebar(props) {
 
   // Variables
   const token = userInfo.auth.userAccessToken;
-  const role = userInfo.auth.userRole;
   const refreshToken = userInfo.auth.userRefreshToken;
 
   // Cookies
   const cookie = new Cookies();
-  
-  
+
   function handleLogout() {
     axios.delete(`http://${dom}/web/logout`, {
       headers: {

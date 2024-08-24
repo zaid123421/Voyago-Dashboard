@@ -1,5 +1,3 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import logo from '../images/dashboard-logo.png'
 import avatar from '../images/avatar.png';
 import { useContext } from 'react';
 import DarkMode from './Dark Mode/DarkMode';

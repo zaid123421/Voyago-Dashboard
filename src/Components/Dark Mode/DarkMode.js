@@ -1,13 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ReactComponent as Sun } from "./Sun.svg";
 import { ReactComponent as Moon } from "./Moon.svg";
 import "./DarkMode.css";
-import Cookies from "universal-cookie";
-import { Theme } from "../../Pages/theme";
 import { MyStringContext } from "../../Pages/MyStringProvider";
 
 export default function DarkMode() {
-  const cookie = new Cookies();
 
   const { myString, setMyString } = useContext(MyStringContext);
 
@@ -51,5 +48,3 @@ const toggleTheme = e => {
     </div>
   );
 };
-
-// // export default DarkMode;
