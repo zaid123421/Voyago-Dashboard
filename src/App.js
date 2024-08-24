@@ -26,8 +26,6 @@ import Requests from "./Pages/Requests";
 export default function App() {
   return (
     <div style={{color: "white"}}>
-      final test
-      {/* <Router basename="/Voyago-Dashboard"> */}
         <Routes>
           <Route path="/Voyago-Dashboard/" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -58,7 +56,6 @@ export default function App() {
             {/* </Route> */}
           {/* </Route> */}
         </Routes>
-      {/* </Router> */}
     </div>
   );
 }
