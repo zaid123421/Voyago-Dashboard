@@ -29,67 +29,38 @@ import Requests from "./Pages/Requests";
 
 export default function App() {
   return (
-    // <div style={{color: "white"}}>
-    //   qwewqewq
-    //   <Routes basename="/Voyago-Dashboard">
-    //     <Route path = "/" element = {<Login />} />
-    //     <Route path = "/forgotpassword" element = {<ForgotPassword />} />
-    //     <Route path = "/superadmincode" element = {<SuperAdminCode />} />
-    //     <Route path = "/verifycode" element = {<VerifyCode />} />
-    //     <Route path = "/setnewpassword" element = {<SetNewPassword />} />
-    //     {/* Protected Routes */}
-    //     {/* <Route element = {<PresistLogin />}> */}
-    //       {/* <Route element = {<RequireAuth />}> */}
-    //         <Route exact path = "dashboard" element = {<Dashboard />} />
-    //         <Route path = "admins" element = {<Admins />} />
-    //         <Route path = "addadmin" element = {<AddAdmin />} />
-    //         <Route path = "admins/:id" element = {<AdminDetails />} />
-    //         <Route path = "users" element = {<Users />} />
-    //         <Route path = "adduser" element = {<AddUser />} />
-    //         <Route path = "users/:id" element = {<UserDetails />} />
-    //         <Route path = "trips" element = {<Trips />} />
-    //         <Route path = "addtrip" element = {<AddTrip />} />
-    //         <Route path = "attractions" element = {<Attractions />} />
-    //         <Route path = "addattraction" element = {<AddAttraction />} />
-    //         <Route path = "destinations" element = {<Destinations />} />
-    //         <Route path = "adddestination" element = {<AddDestination />} />
-    //         <Route path = "destinationdetails" element = {<DestinationDetails />} />
-    //         <Route path = "reservations" element = {<Reservations />} />
-    //         <Route path = "transactions" element = {<Transactions />} />
-    //         <Route path = "transactionrequests" element = {<TransactionRequests />} />
-    //         <Route path = "requests" element = {<Requests />} />
-    //       {/* </Route> */}
-    //     {/* </Route> */}
-    //   </Routes>
-    // </div>
-    <Router basename="/Voyago-Dashboard">
-      <div style={{ color: "white" }}>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/superadmincode" element={<SuperAdminCode />} />
-          <Route path="/verifycode" element={<VerifyCode />} />
-          <Route path="/setnewpassword" element={<SetNewPassword />} />
-          <Route exact path="dashboard" element={<Dashboard />} />
-          <Route path="admins" element={<Admins />} />
-          <Route path="addadmin" element={<AddAdmin />} />
-          <Route path="admins/:id" element={<AdminDetails />} />
-          <Route path="users" element={<Users />} />
-          <Route path="adduser" element={<AddUser />} />
-          <Route path="users/:id" element={<UserDetails />} />
-          <Route path="trips" element={<Trips />} />
-          <Route path="addtrip" element={<AddTrip />} />
-          <Route path="attractions" element={<Attractions />} />
-          <Route path="addattraction" element={<AddAttraction />} />
-          <Route path="destinations" element={<Destinations />} />
-          <Route path="adddestination" element={<AddDestination />} />
-          <Route path="destinationdetails" element={<DestinationDetails />} />
-          <Route path="reservations" element={<Reservations />} />
-          <Route path="transactions" element={<Transactions />} />
-          <Route path="transactionrequests" element={<TransactionRequests />} />
-          <Route path="requests" element={<Requests />} />
-        </Routes>
-      </div>
-    </Router>
+    <div style={{color: "white"}}>
+      final test
+      <Routes basename="/Voyago-Dashboard">
+        <Route path = "/" element = {<Login />} />
+        <Route path = "/forgotpassword" element = {<ForgotPassword />} />
+        <Route path = "/superadmincode" element = {<SuperAdminCode />} />
+        <Route path = "/verifycode" element = {<VerifyCode />} />
+        <Route path = "/setnewpassword" element = {<SetNewPassword />} />
+        {/* Protected Routes */}
+        {/* <Route element = {<PresistLogin />}> */}
+          {/* <Route element = {<RequireAuth />}> */}
+            <Route exact path = "dashboard" element = {<Dashboard />} />
+            <Route path = "admins" element = {<Admins />} />
+            <Route path = "addadmin" element = {<AddAdmin />} />
+            <Route path = "admins/:id" element = {<AdminDetails />} />
+            <Route path = "users" element = {<Users />} />
+            <Route path = "adduser" element = {<AddUser />} />
+            <Route path = "users/:id" element = {<UserDetails />} />
+            <Route path = "trips" element = {<Trips />} />
+            <Route path = "addtrip" element = {<AddTrip />} />
+            <Route path = "attractions" element = {<Attractions />} />
+            <Route path = "addattraction" element = {<AddAttraction />} />
+            <Route path = "destinations" element = {<Destinations />} />
+            <Route path = "adddestination" element = {<AddDestination />} />
+            <Route path = "destinationdetails" element = {<DestinationDetails />} />
+            <Route path = "reservations" element = {<Reservations />} />
+            <Route path = "transactions" element = {<Transactions />} />
+            <Route path = "transactionrequests" element = {<TransactionRequests />} />
+            <Route path = "requests" element = {<Requests />} />
+          {/* </Route> */}
+        {/* </Route> */}
+      </Routes>
+    </div>
   );
 }
