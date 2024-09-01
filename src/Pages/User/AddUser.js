@@ -43,11 +43,11 @@ export default function AddUser() {
       <Sidebar number = {3} />
       <div className = "content add-admin-page d-flex justify-c align-c mt-50">
         <NavLink to = "/users">
-          <i className="fa-solid fa-angle-left arrow-left"></i>
+          <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
         </NavLink>
-        <div className = "add-user-card">
-          <h2 className = "mb-25">Add A New User</h2>
-          <div className = "mb-25"> 
+        <div className = "add-card">
+          <h2 className = "mb-25 text-c fw-500">Add A New User</h2>
+          <div>
           <div className = "d-flex flex-d-c mb-25">
             <label htmlFor = "username" className = "special-label mb-15">Username</label>
             <input
@@ -59,7 +59,7 @@ export default function AddUser() {
               onChange = {(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className = "mb-25">
+          <div className = "d-flex flex-d-c mb-25">
             <label htmlFor = "email" className = "special-label mb-15">Email</label>
             <input
               className = "fs-18"
@@ -70,7 +70,7 @@ export default function AddUser() {
               onChange = {(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className = "mb-25">
+          <div className = "d-flex flex-d-c mb-25">
             <label htmlFor = "pass" className = "special-label mb-15">Password</label>
             <input
               className = "fs-18"

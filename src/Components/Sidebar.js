@@ -54,93 +54,14 @@ export default function Sidebar(props) {
       }
       
     </div>
-      {userInfo.auth.userRole === 'Super Admin' ?
-            <div className = 'nav-links d-flex flex-d-c'>
-            <NavLink to = "/dashboard" className = {props.number === 1 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-solid fa-chart-simple fs-18"></i>
-              Dashboard
-            </NavLink>
-            <NavLink to = "/admins" className = {props.number === 2 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-solid fa-user-tie fs-18"></i>
-              Admins
-            </NavLink>
-            <NavLink to = "/users" className = {props.number === 3 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-solid fa-users fs-18"></i>
-              Users
-            </NavLink>
-            <NavLink to = "/trips" className = {props.number === 4 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-solid fa-briefcase fs-18"></i>
-              Trips
-            </NavLink>
-            <NavLink to = "/attractions" className = {props.number === 5 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-solid fa-globe"></i>
-              Attractions
-            </NavLink>
-            <NavLink to = "/destinations" className = {props.number === 6 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-solid fa-location-dot"></i>
-              Destinations
-            </NavLink>
-            <NavLink to = "/reservations" className = {props.number === 7 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className="fa-solid fa-table-list"></i>
-              Reservations
-            </NavLink>
-            <NavLink to = "/transactions" className = {props.number === 8 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-solid fa-money-bill-transfer"></i>
-              Transactions
-            </NavLink>
-            <NavLink to = "/requests" className = {props.number === 9 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-              <i className = "fa-regular fa-hand"></i>
-              Requests
-            </NavLink>
-            <button onClick= {handleLogout} className = "d-flex align-c item-link logout">
-              <i className="fa-solid fa-arrow-right-from-bracket fs-18"></i>
-              Log Out
-            </button>
-          </div>
-          : userInfo.auth.userRole === 'Admin' ?
-          <div className = 'nav-links d-flex flex-d-c'>
-          <NavLink to = "/dashboard" className = {props.number === 1 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-solid fa-chart-simple fs-18"></i>
-            Dashboard
-          </NavLink>
-          <NavLink to = "/users" className = {props.number === 3 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-solid fa-users fs-18"></i>
-            Users
-          </NavLink>
-          <NavLink to = "/trips" className = {props.number === 4 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-solid fa-briefcase fs-18"></i>
-            Trips
-          </NavLink>
-          <NavLink to = "/attractions" className = {props.number === 5 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-          <i className = "fa-solid fa-globe"></i>
-            Attractions
-          </NavLink>
-          <NavLink to = "/destinations" className = {props.number === 6 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-solid fa-location-dot"></i>
-            Destinations
-          </NavLink>
-          <NavLink to = "/reservations" className = {props.number === 7 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className="fa-solid fa-table-list"></i>
-            Reservations
-          </NavLink>
-          <NavLink to = "/transactions" className = {props.number === 8 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-solid fa-money-bill-transfer"></i>
-            Transactions
-          </NavLink>
-          <NavLink to = "/requests" className = {props.number === 9 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-            <i className = "fa-regular fa-hand"></i>
-            Requests
-          </NavLink>
-          <button onClick= {handleLogout} className = "d-flex align-c item-link logout">
-            <i className="fa-solid fa-arrow-right-from-bracket fs-18"></i>
-            Log Out
-          </button>
-        </div>
-        : userInfo.auth.userRole === 'Trips Organizer' ?
-        <div className = 'nav-links d-flex flex-d-c'>
+      <div className = 'nav-links d-flex flex-d-c'>
         <NavLink to = "/dashboard" className = {props.number === 1 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-chart-simple fs-18"></i>
           Dashboard
+        </NavLink>
+        <NavLink to = "/admins" className = {props.number === 2 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
+          <i className = "fa-solid fa-user-tie fs-18"></i>
+          Admins
         </NavLink>
         <NavLink to = "/users" className = {props.number === 3 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-users fs-18"></i>
@@ -158,39 +79,23 @@ export default function Sidebar(props) {
           <i className = "fa-solid fa-location-dot"></i>
           Destinations
         </NavLink>
+        <NavLink to = "/reservations" className = {props.number === 7 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
+          <i className="fa-solid fa-table-list"></i>
+          Reservations
+        </NavLink>
+        <NavLink to = "/transactions" className = {props.number === 8 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
+          <i className = "fa-solid fa-money-bill-transfer"></i>
+          Transactions
+        </NavLink>
+        <NavLink to = "/requests" className = {props.number === 9 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
+          <i className = "fa-regular fa-hand"></i>
+          Requests
+        </NavLink>
         <button onClick= {handleLogout} className = "d-flex align-c item-link logout">
           <i className="fa-solid fa-arrow-right-from-bracket fs-18"></i>
           Log Out
         </button>
       </div>
-      : userInfo.auth.userRole === 'Accountant' ?
-      <div className = 'nav-links d-flex flex-d-c'>
-      <NavLink to = "/dashboard" className = {props.number === 1 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-        <i className = "fa-solid fa-chart-simple fs-18"></i>
-        Dashboard
-      </NavLink>
-      <NavLink to = "/users" className = {props.number === 3 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-        <i className = "fa-solid fa-users fs-18"></i>
-        Users
-      </NavLink>
-      <NavLink to = "/reservations" className = {props.number === 7 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-        <i className="fa-solid fa-table-list"></i>
-        Reservations
-      </NavLink>
-      <NavLink to = "/transactions" className = {props.number === 8 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-        <i className = "fa-solid fa-money-bill-transfer"></i>
-        Transactions
-      </NavLink>
-      <NavLink to = "/requests" className = {props.number === 9 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
-        <i className = "fa-regular fa-hand"></i>
-        Requests
-      </NavLink>
-      <button onClick= {handleLogout} className = "d-flex align-c item-link logout">
-        <i className="fa-solid fa-arrow-right-from-bracket fs-18"></i>
-        Log Out
-      </button>
-    </div>
-      : ''}
     </div>
   )
 }

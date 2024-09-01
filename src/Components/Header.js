@@ -12,8 +12,14 @@ export default function Header() {
       <div className = 'd-flex'>
         <DarkMode />
         <div className = 'avatar-text d-flex flex-d-c justify-c'>
-          <h3 className = 'fw-600'>{userInfo.auth.userName}</h3>
-          <h4 className = "fs-14 fw-500">{userInfo.auth.userRole}</h4>
+          <h3 className = 'fw-600'>
+            {userInfo.auth.userName}
+            Zaid Alshamaa
+          </h3>
+          <h4 className = "fs-14 fw-500">
+            {userInfo.auth.userRole}
+            Super Admin
+          </h4>
         </div>
         <img alt = 'avatar' src = {avatar} />
       </div>

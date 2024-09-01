@@ -53,7 +53,39 @@ async function deleteUser (id) {
             </tr>
           </thead>
           <tbody>
-            {showAdmins}
+            {/* {showAdmins} */}
+            <tr>
+              <td>1</td>
+              <td>Ramez Barakah </td>
+              <td>Trips Organizer</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td>
+                <NavLink to = 'admins/:id'>
+                  <i className = "fa-regular fa-trash-can table-icon"></i>
+                </NavLink>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ahmad Mohsen</td>
+              <td>Admin</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Samer Tr</td>
+              <td>Accounant</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Yaser Alshamaa</td>
+              <td>Admin</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
           </tbody>
         </table>
           <NavLink className = "floating-button" to = "/addadmin">

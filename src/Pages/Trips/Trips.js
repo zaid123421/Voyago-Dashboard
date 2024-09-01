@@ -116,7 +116,7 @@ export default function Trips() {
       <Sidebar number = {4} />
       <div className = "content">
         <h1 className = "mb-15 special-head">Trips</h1>
-        <div className = "trips-container">
+        <div className = "trips-container position-relative">
           {showTrips}
         </div>
         <NavLink className = "floating-button" to = "/addtrip">

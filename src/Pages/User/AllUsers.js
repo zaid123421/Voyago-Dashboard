@@ -19,24 +19,24 @@ export default function Users() {
   }, [runUseEffect])
 
 // Handling Search
-  function handleSearch(e) {
-    setSearch(e.target.value)
-  }
+  // function handleSearch(e) {
+  //   setSearch(e.target.value)
+  // }
 
-  const filteredData = users.filter((user) =>
-    user.username.toLowerCase().startsWith(search)
-  );
+  // const filteredData = users.filter((user) =>
+  //   user.username.toLowerCase().startsWith(search)
+  // );
 
 // Mapping
-  const showUsers = filteredData.map((user, index) =>
-    <tr key = {index}>
-      <td>{index < 9? `0${index + 1}` : index + 1}</td>
-      <td>{user.username}</td>
-      <td>{user.balance}</td>
-      <td><Link to = {`${user.id}`}><i className = "fa-solid fa-eye table-icon"></i></Link></td>
-      <td><i onClick = {() => deleteUser(user.id)} className = "fa-regular fa-trash-can table-icon"></i></td>
-    </tr>
-)
+//   const showUsers = filteredData.map((user, index) =>
+//     <tr key = {index}>
+//       <td>{index < 9? `0${index + 1}` : index + 1}</td>
+//       <td>{user.username}</td>
+//       <td>{user.balance}</td>
+//       <td><Link to = {`${user.id}`}><i className = "fa-solid fa-eye table-icon"></i></Link></td>
+//       <td><i onClick = {() => deleteUser(user.id)} className = "fa-regular fa-trash-can table-icon"></i></td>
+//     </tr>
+// )
 
 // Delete User Function
 async function deleteUser (id) {
@@ -57,9 +57,9 @@ async function deleteUser (id) {
       <div className = "content nav-item-content">
         <div className = "d-flex">
         <h1 className = "special-head">Users</h1>
-          <div className = "d-flex align-c ml-50">
+          {/* <div className = "d-flex align-c ml-50">
             <label htmlFor="search">
-              <i className="search-icon fa-solid fa-magnifying-glass" ></i>
+              <i className="search-icon fa-solid fa-magnifying-glass position-relative" ></i>
             </label>
             <input
               id = "search"
@@ -67,7 +67,7 @@ async function deleteUser (id) {
               placeholder = "Search"
               onChange = {handleSearch}
             />
-          </div>
+          </div> */}
         </div>
         <table className = "special-table">
           <thead>
@@ -80,7 +80,63 @@ async function deleteUser (id) {
             </tr>
           </thead>
           <tbody>
-            {showUsers}
+            {/* {showUsers} */}
+            <tr>
+              <td>1</td>
+              <td>Sameer</td>
+              <td>1900</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mona</td>
+              <td>1320</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Loujain</td>
+              <td>2160</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Reem</td>
+              <td>0</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Jana</td>
+              <td>0</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Hamza</td>
+              <td>540</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Mohanad</td>
+              <td>870</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Ramy</td>
+              <td>2500</td>
+              <td><i className = "fa-solid fa-eye table-icon"></i></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
           </tbody>
         </table>
         <NavLink className = "floating-button" to = "/adduser">

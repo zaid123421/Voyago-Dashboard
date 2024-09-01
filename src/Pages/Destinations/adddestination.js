@@ -74,7 +74,7 @@ async function Submit(e){
       <Sidebar number = {6} />
       <div className = "content">
         <NavLink to = "/destinations">
-          <i className="fa-solid fa-angle-left arrow-left"></i>
+          <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
         </NavLink>
         <h1 className = "fw-500 ml-25">Add A New Destination</h1>
         <p className = "ml-25 mt-20 fs-18">add the destination's details:</p>

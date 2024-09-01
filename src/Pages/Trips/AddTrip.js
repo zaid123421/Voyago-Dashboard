@@ -106,47 +106,51 @@ function handleOpenImage() {
       return(
         <li className = "mb-10">
           <input onChange ={(e) => handleCheckboxChange(e,feature.id)} id = {feature.id} type = "checkbox" className = "checkbox-special"/>
-          <label htmlFor= {feature.id} className = "checkbox-label">{feature.name}</label>
+          <label htmlFor= {feature.id} className = "checkbox-label cursor-p position-relative">{feature.name}</label>
         </li>
       );
     }
   });
+
   const showTransportingFeatures = features.map((feature, index) => {
     if(feature.type === "Transporting"){
       return(
         <li className = "mb-10">
           <input onChange = {(e) => handleCheckboxChange(e, feature.id)} id = {feature.id} type = "checkbox" className = "checkbox-special"/>
-          <label htmlFor= {feature.id} className = "checkbox-label">{feature.name}</label>
+          <label htmlFor= {feature.id} className = "checkbox-label cursor-p position-relative">{feature.name}</label>
         </li>
       );
     }
   });
+
   const showServicesFeatures = features.map((feature, index) => {
     if(feature.type === "Services"){
       return(
         <li className = "mb-10">
           <input onChange = {(e) => handleCheckboxChange(e, feature.id)} id = {feature.id} type = "checkbox" className = "checkbox-special"/>
-          <label htmlFor= {feature.id} className = "checkbox-label">{feature.name}</label>
+          <label htmlFor= {feature.id} className = "checkbox-label cursor-p position-relative">{feature.name}</label>
         </li>
       );
     }
   });
+
   const showFeesFeatures = features.map((feature, index) => {
     if(feature.type === "Fees"){
       return(
         <li className = "mb-10">
           <input onChange = {(e) => handleCheckboxChange(e, feature.id)} id = {feature.id} type = "checkbox" className = "checkbox-special"/>
-          <label htmlFor= {feature.id} className = "checkbox-label">{feature.name}</label>
+          <label htmlFor= {feature.id} className = "checkbox-label cursor-p position-relative">{feature.name}</label>
         </li>
       );
     }
   });
+
   const showActivitiesFeatures = features.map((feature, index) => {
     if(feature.type === "Activities"){
       return(
         <li className = "mb-10">
           <input onChange = {(e) => handleCheckboxChange(e, feature.id)} id = {feature.id} type = "checkbox" className = "checkbox-special"/>
-          <label htmlFor= {feature.id} className = "checkbox-label">{feature.name}</label>
+          <label htmlFor= {feature.id} className = "checkbox-label cursor-p position-relative">{feature.name}</label>
         </li>
       );
     }
@@ -161,7 +165,7 @@ function handleOpenImage() {
     .catch((err) => console.log(err));
   }, []);
 
-    // Detstinations Select Names
+  // Detstinations Select Names
     const showDestinationsNames = destinations.map((destination, index) => {
       return(
         <option value = {destination.id}>{destination.name}</option>
@@ -205,33 +209,17 @@ function handleOpenImage() {
     setDays([...days, [{}]]);
   };
 
-  // const handleAddEvent = (dayIndex) => {
-  //   const updatedDays = [...days];
-  //   if (updatedDays[dayIndex].length === 0) {
-  //     updatedDays[dayIndex] = [{
-  //       attraction_id: "",
-  //       type: ""
-  //     }];
-  //   } else {
-  //     updatedDays[dayIndex] = [...updatedDays[dayIndex], {
-  //       attraction_id: "",
-  //       type: ""
-  //     }];
-  //   }
-  //   setDays(updatedDays);
-  // };
-
   const handleAddEvent = (dayIndex) => {
     const updatedDays = [...days];
     if (updatedDays[dayIndex].length === 0) {
       updatedDays[dayIndex] = [{
         action: '',
         title: '',
-        attraction_id: "", // تعيين القيمة الافتراضية هنا
+        attraction_id: "",
         start_date: '',
         duration: '',
         description: '',
-        type: "", // تعيين القيمة الافتراضية هنا
+        type: "",
         price_adult: null,
         price_child: null,
         additional_note: ''
@@ -240,11 +228,11 @@ function handleOpenImage() {
       updatedDays[dayIndex] = [...updatedDays[dayIndex], {
         action: '',
         title: '',
-        attraction_id: "", // تعيين القيمة الافتراضية هنا
+        attraction_id: "",
         start_date: '',
         duration: '',
         description: '',
-        type: "", // تعيين القيمة الافتراضية هنا
+        type: "",
         price_adult: null,
         price_child: null,
         additional_note: ''
@@ -370,7 +358,7 @@ function handleOpenImage() {
       <div className = "content">
         <div className = "destination-details-header mb-15">
           <NavLink to = "/trips">
-            <i className="fa-solid fa-angle-left"></i>
+            <i className="fa-solid fa-angle-left arrow-left"></i>
           </NavLink>
           <h1 className = "ml-20 special-head">Add Trip A New Trip</h1>
         </div>
@@ -414,7 +402,7 @@ function handleOpenImage() {
                 <i className ="fa-solid fa-arrow-up"></i>
               </button>
             </div>
-            <div className = "div-select mt-15">
+            <div className = "div-select mt-15 position-relative">
               <label htmlFor = "destination" className = "fw-500">Destination</label>
               <select
                 onChange={handleSelectDestination}
@@ -426,7 +414,7 @@ function handleOpenImage() {
                 </option>
                 {showDestinationsNames}
               </select>
-              <i className = "fa-solid fa-chevron-down arrow-select"></i>
+              <i className = "fa-solid fa-chevron-down arrow-select position-relative cursor-p"></i>
             </div>
             <div className = "mt-15 main-description">
               <label>Description</label>
@@ -453,31 +441,31 @@ function handleOpenImage() {
             <p className = "fs-24">What's included in the trip?</p>
             <div className = "special-box features-box">
               <div>
-                <span>Meals:</span>
+                <span className = "position-relative fs-20">Meals:</span>
                 <ul>
                   {showMealsFeatures}
                 </ul>
               </div>
               <div>
-                <span>Transporting</span>
+                <span className = "position-relative fs-20">Transporting</span>
                 <ul>
                   {showTransportingFeatures}
                 </ul>
               </div>
               <div>
-                <span>Fees:</span>
+                <span className = "position-relative fs-20">Fees:</span>
                 <ul>
                   {showFeesFeatures}
                 </ul>
               </div>
               <div>
-                <span>Services:</span>
+                <span className = "position-relative fs-20">Services:</span>
                 <ul>
                   {showServicesFeatures}
                 </ul>
               </div>
               <div>
-                <span>Activities</span>
+                <span className = "position-relative fs-20">Activities</span>
                 <ul>
                   {showActivitiesFeatures}
                 </ul>
@@ -495,7 +483,7 @@ function handleOpenImage() {
             </div>
             <div className = "special-box cancellation-box">
               <h3 className = "fw-600">Cancellation</h3>
-              <p className = "ml-25 mt-5">Up to
+              <p className = "ml-25 mt-5 position-relative">Up to
                 <button onClick = {handleLeftHours} className = "bt ml-10">
                   <i className = "fa-solid fa-arrow-down"></i>
                 </button>
@@ -507,13 +495,13 @@ function handleOpenImage() {
                 </button>
                 hour(s) before the trip's start time.
               </p>
-              <p className = "ml-25 mt-15">
+              <p className = "ml-25 mt-15 position-relative">
                 this trip requires a minimum number of travelers. If it's canceled because the minimum
                 isn't met, you'll be offered a different date/trip or a aull refuned.
               </p>
               <h3 className = "mb-10 mt-20 fw-600">Traveler Information</h3>
-              <p className = "ml-25">Adult Age: 15 - 60</p>
-              <p className = "ml-25">Child Age: 5 - 14</p>
+              <p className = "ml-25 position-relative">Adult Age: 15 - 60</p>
+              <p className = "ml-25 position-relative">Child Age: 5 - 14</p>
             </div>
             <p className = "fs-24 span-2 mb-20">Itinerary of the trip</p>
         </div>
@@ -555,7 +543,7 @@ function handleOpenImage() {
                 <span>Or</span>
               </div>
               <div>
-                <label className = "label-type">Attraction:</label>
+                <label className = "label-type position-relative">Attraction:</label>
                 <select
                   className = "ml-15 cursor-p"
                   value={event.attraction_id || ""}
@@ -594,7 +582,7 @@ function handleOpenImage() {
                 />
               </div>
               <div>
-                <label className = "label-type">Type:</label>
+                <label className = "label-type position-relative">Type:</label>
                 <select
                   className = "cursor-p ml-15 optional-select"
                   value = {event.type || ""}

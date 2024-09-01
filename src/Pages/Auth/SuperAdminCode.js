@@ -76,7 +76,7 @@ async function Submit(e) {
 }
 
   return(
-    <div className = "auth-card super-admin-card">
+    <div className = "auth-card super-admin-card position-absolute">
       <div className = "first-child">
         <div className = 'back-to-login mt-15 mr-50'>
           <NavLink to = '/'>
@@ -92,7 +92,7 @@ async function Submit(e) {
           <input ref={inputRefs.input3} className = 'second-input mb-30' type="text" name="input3" value={inputs.input3} onChange={handleChange} />
           <input ref={inputRefs.input4} className = 'second-input mb-30' type="text" name="input4" value={inputs.input4} onChange={handleChange} />
           <input ref={inputRefs.input5} className = 'second-input mb-30' type="text" name="input5" value={inputs.input5} onChange={handleChange} />
-          {accept && error === 406 && <p className = 'error-verify fs-14'>Invalid Code</p>}
+          {accept && error === 406 && <p className = 'error-verify fs-14 position-absolute color-red'>Invalid Code</p>}
           <button className = 'special-button' onClick = {Submit}>Verify</button>
         </div>
       </div>

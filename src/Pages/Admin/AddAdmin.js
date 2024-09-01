@@ -47,11 +47,11 @@ export default function AddAdmin() {
       <Sidebar number = {2} />
       <div className = "content add-admin-page d-flex align-c justify-c">
         <NavLink to = "/admins">
-          <i className="fa-solid fa-angle-left arrow-left"></i>
+          <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
         </NavLink>
-        <div className = "add-admin-card">
-          <h2 className = "fw-500 mb-25">Add A New Admin</h2>
-          <div className = "mb-25">
+        <div className = "add-card">
+          <h2 className = "fw-500 mb-25 text-c">Add A New Admin</h2>
+          <div>
           <div className = "d-flex flex-d-c mb-25">
             <label htmlFor = "username" className = "special-label mb-15">Username</label>
             <input
@@ -63,7 +63,7 @@ export default function AddAdmin() {
               onChange = {(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className = "mb-25">
+          <div className = "d-flex flex-d-c mb-25">
             <label htmlFor = "email" className = "special-label mb-15">Email</label>
             <input
               className = "fs-18"
@@ -74,7 +74,7 @@ export default function AddAdmin() {
               onChange = {(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className = "mb-25">
+          <div className = "d-flex flex-d-c mb-25">
             <label htmlFor = "password" className = "special-label mb-15">Password</label>
             <input
               className = "fs-18"
@@ -85,14 +85,14 @@ export default function AddAdmin() {
               onChange = {(e) => setPassword(e.target.value)}
             />
           </div>
-          <div>
+          <div className="div-select">
             <label className = "special-label mr-15 mb-15">Role</label>
             <select onChange = {handleSelect} className = "admin-select cursor-p fs-15">
               <option value = "Admin">Admin</option>
               <option value = "Accountant">Accountant</option>
               <option value = "Trips Organizer">Trips Organizer</option>
             </select>
-            <i className="fa-solid fa-chevron-down arrow-select"></i>
+            <i className="fa-solid fa-chevron-down arrow-select cursor-p position-relative"></i>
           </div>
             <button onClick = {Submit} className = "add-button">Add</button>
           </div>

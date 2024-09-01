@@ -17,7 +17,7 @@ export default function DestinationDetails() {
         <h1 className = "ml-20 special-head">Destination Details</h1>
         </div>
         <div className = "destination-details-container">
-          <div className = "images-slider">
+          <div className = "images-slider position-relative">
             <span className = "destination-details-name">Spain</span>
             <img src = {spain}></img>
           </div>

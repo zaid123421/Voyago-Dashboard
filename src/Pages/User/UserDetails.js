@@ -48,7 +48,7 @@ const nav = useNavigate();
       <Sidebar number = {3} />
       <div className = "content">
           <NavLink to = "/users">
-            <i className = "fa-solid fa-angle-left arrow-left"></i>
+            <i className = "fa-solid fa-angle-left arrow-left position-absolute"></i>
           </NavLink>
           <h1 className = "special-head ml-25">User Details</h1>
         <div className = "user-details-box">

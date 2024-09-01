@@ -47,9 +47,9 @@ export default function AdminDetails() {
       <Sidebar number = {2} />
       <div className = 'content admin-details-page d-flex align-c justify-c'>
         <NavLink to = "/admins">
-          <i className = "fa-solid fa-angle-left arrow-left"></i>
+          <i className = "fa-solid fa-angle-left arrow-left position-absolute"></i>
         </NavLink>
-        <div className = 'admin-card-info'>
+        <div className = 'admin-card-info position-absolute'>
           <h1 className = "fw-500">Admin Details</h1>
           <div>
             <h3 className = "fw-500">Name</h3>

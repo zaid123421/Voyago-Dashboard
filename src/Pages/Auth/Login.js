@@ -57,8 +57,12 @@ export default function Login() {
     }
   }
 
+  function withoutLogin() {
+    nav('/dashboard');
+  }
+
   return(
-    <div className = "auth-card">
+    <div className = "auth-card position-absolute">
       <div className = 'first-child'>
         <h1 className = 'mt-75 mb-50'>Sign in</h1>
         <div className = 'input-box d-flex flex-d-c mb-15'>
@@ -72,8 +76,8 @@ export default function Login() {
             value = {email}
             onChange = {(e) => setEmail(e.target.value)}
           />
-          {email.length === 0 && accept && <p className = 'error fs-14'>Please Enter Your Email</p>}
-          {accept && (error === 500 || error ===401) && <p className = 'error-bottom fs-14'>Invalid Email or Password</p>}
+          {email.length === 0 && accept && <p className = 'error fs-14 position-absolute color-red'>Please Enter Your Email</p>}
+          {accept && (error === 500 || error ===401) && <p className = 'error-bottom fs-14 position-absolute color-red'>Invalid Email or Password</p>}
         </div>
         <div className = 'input-box d-flex flex-d-c'>
           <label className = 'mb-15' htmlFor = 'login-password-input'>Password</label>
@@ -85,12 +89,13 @@ export default function Login() {
             value = {password}
             onChange = {(e) => setPassword(e.target.value)}
           />
-          {password.length < 8 && accept && <p className = 'error fs-14'>Password Must Be More Than 8 Characters</p>}
+          {password.length < 8 && accept && <p className = 'error fs-14 position-absolute color-red'>Password Must Be More Than 8 Characters</p>}
         </div>
         <div>
           <NavLink className = "mt-15 fs-14" to = "/forgotpassword">Forgot Password ?</NavLink>
         </div>
         <button onClick = {Submit} className = 'special-button'>Sign in</button>
+        <button onClick = {withoutLogin} className = 'special-button'>Couninue as Viewer</button>
       </div>
       <div className = 'second-child'>
         <div className = 'login-text'>

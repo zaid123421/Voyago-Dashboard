@@ -45,7 +45,7 @@ async function Submit(e) {
 
 
   return(
-    <div className = "auth-card">
+    <div className = "auth-card position-absolute">
       <div className = "first-child d-flex align-s">
           <h1 className = 'mt-50 mb-30' >Set A New Password</h1>
           <p className = 'fs-15 mb-50'>Enter the verification code we sent to your email</p>
@@ -68,7 +68,7 @@ async function Submit(e) {
                 value = {confirmPassword}
                 onChange = {(e) => setConfirmPassword(e.target.value)}/>
             </div>
-            {accept && password !== confirmPassword && <p className = 'error-set-password fs-14'>Password Doesn't Match</p>}
+            {accept && password !== confirmPassword && <p className = 'error-set-password fs-14 position-absolute color-red'>Password Doesn't Match</p>}
             <button onClick = {Submit} className = 'special-button'>Set Password</button>
           </div>
       </div>

@@ -44,10 +44,10 @@ async function Submit(e) {
 }
 
   return(
-    <div className = 'auth-card'>
+    <div className = 'auth-card position-absolute'>
       <div className = 'first-child align-s'>
         <div className = 'back-to-login mt-15'>
-          <NavLink to = '/'>
+          <NavLink to = '/Voyago-dashboard'>
             <i className="fa-solid fa-angle-left fs-14"></i>
             Back To Login Page
           </NavLink>
@@ -63,7 +63,7 @@ async function Submit(e) {
             type = 'email'
             value = {email}
             onChange = {(e) => setEmail(e.target.value)} />
-          {accept && error === 500 && <p className = 'error-forgot fs-14'>Invalid Email</p>}
+          {accept && error === 500 && <p className = 'error-forgot fs-14 position-absolute color-red'>Invalid Email</p>}
           <button className = 'special-button' onClick = {Submit}>Submit</button>
         </div>
       </div>

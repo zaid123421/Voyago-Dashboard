@@ -74,7 +74,7 @@ const handleChange = (e) => {
 };
 
   return(
-    <div className = "auth-card">
+    <div className = "auth-card position-absolute">
       <div className = "first-child align-s">
         <div className = 'back-to-login mt-15'>
           <NavLink to = '/'>
@@ -97,7 +97,7 @@ const handleChange = (e) => {
             <input ref = {inputRefs.input3} className = 'second-input mb-30' type="text" name="input3" value={inputs.input3} onChange={handleChange} />
             <input ref = {inputRefs.input4} className = 'second-input mb-30' type="text" name="input4" value={inputs.input4} onChange={handleChange} />
             <input ref = {inputRefs.input5}className = 'second-input mb-30' type="text" name="input5" value={inputs.input5} onChange={handleChange} />
-            {accept && error === 406 && <p className = 'error-verify fs-14'>Invalid Code</p>}
+            {accept && error === 406 && <p className = 'error-verify fs-14 position-absolute color-red'>Invalid Code</p>}
             <button className = 'special-button' onClick = {Submit}>Verify</button>
           </div>
       </div>
