@@ -509,11 +509,14 @@ body {
   .second-child .forgot-password-img {
     display: none;
   }
+  .auth-card .first-child div {
+    width: 100%;
+  }
   .auth-card .first-child div:nth-child(2) {
     margin-top: 25px;
   }
   .auth-card .first-child div:nth-child(4){
-    width: 350px;
+    width: 100%; 
     text-align: left;
   }
   .auth-card .first-child div:nth-child(4) a {
@@ -526,17 +529,13 @@ body {
     justify-content: flex-end;
   }
   .main-input {
-    width: 250px;
+    width: 100%;
   }
   .special-button {
-    width: 250px;
+    width: 100%;
   }
   .auth-card .first-child {
     width: 100%;
-  }
-  .auth-card .first-child div:nth-child(4){
-    width: 250px;
-    text-align: left;
   }
   .auth-card .first-child div:nth-child(4) a {
     margin-right: 0;
@@ -549,7 +548,7 @@ body {
   .logo {
     width: 100px;
     margin-right: 20px;
-    margin-top: -35px;
+    margin-top: -10px;
   }
 }
 .auth-card .first-child a:hover {
