@@ -13,35 +13,35 @@ export default function Users() {
 
 // useEffect
   useEffect(() => {
-    axios.get(`http://${dom}/web/users`, )
+    axios.get(`https://${dom}/web/users`, )
     .then((data) => setUsers(data.data.users))
     .catch((err) => console.log(err));
   }, [runUseEffect])
 
 // Handling Search
-  // function handleSearch(e) {
-  //   setSearch(e.target.value)
-  // }
+  function handleSearch(e) {
+    setSearch(e.target.value)
+  }
 
-  // const filteredData = users.filter((user) =>
-  //   user.username.toLowerCase().startsWith(search)
-  // );
+  const filteredData = users.filter((user) =>
+    user.username.toLowerCase().startsWith(search)
+  );
 
 // Mapping
-//   const showUsers = filteredData.map((user, index) =>
-//     <tr key = {index}>
-//       <td>{index < 9? `0${index + 1}` : index + 1}</td>
-//       <td>{user.username}</td>
-//       <td>{user.balance}</td>
-//       <td><Link to = {`${user.id}`}><i className = "fa-solid fa-eye table-icon"></i></Link></td>
-//       <td><i onClick = {() => deleteUser(user.id)} className = "fa-regular fa-trash-can table-icon"></i></td>
-//     </tr>
-// )
+  const showUsers = filteredData.map((user, index) =>
+    <tr key = {index}>
+      <td>{index < 9? `0${index + 1}` : index + 1}</td>
+      <td>{user.username}</td>
+      <td>{user.balance}</td>
+      <td><Link to = {`${user.id}`}><i className = "fa-solid fa-eye table-icon"></i></Link></td>
+      <td><i onClick = {() => deleteUser(user.id)} className = "fa-regular fa-trash-can table-icon"></i></td>
+    </tr>
+)
 
 // Delete User Function
 async function deleteUser (id) {
   try{
-    let res = await axios.delete(`http://${dom}/web/delete_user/${id}`,);
+    let res = await axios.delete(`https://${dom}/web/delete_user/${id}`,);
     if(res.status === 200)
     setRun((prev) => prev + 1);
   }
@@ -57,7 +57,7 @@ async function deleteUser (id) {
       <div className = "content nav-item-content">
         <div className = "d-flex">
         <h1 className = "special-head">Users</h1>
-          {/* <div className = "d-flex align-c ml-50">
+          <div className = "d-flex align-c ml-50">
             <label htmlFor="search">
               <i className="search-icon fa-solid fa-magnifying-glass position-relative" ></i>
             </label>
@@ -67,7 +67,7 @@ async function deleteUser (id) {
               placeholder = "Search"
               onChange = {handleSearch}
             />
-          </div> */}
+          </div>
         </div>
         <table className = "special-table">
           <thead>
@@ -80,8 +80,8 @@ async function deleteUser (id) {
             </tr>
           </thead>
           <tbody>
-            {/* {showUsers} */}
-            <tr>
+            {showUsers}
+            {/* <tr>
               <td>1</td>
               <td>Sameer</td>
               <td>1900</td>
@@ -136,7 +136,7 @@ async function deleteUser (id) {
               <td>2500</td>
               <td><i className = "fa-solid fa-eye table-icon"></i></td>
               <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
         <NavLink className = "floating-button" to = "/adduser">

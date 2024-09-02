@@ -13,7 +13,7 @@ export default function Reservations(){
   const token = userInfo.auth.userAccessToken;
 
   useEffect(() => {
-    axios.get(`http://${dom}/web/show_all_reservations`, {
+    axios.get(`https://${dom}/web/show_all_reservations`, {
       headers : {
         'Authorization': `Bearer ${token}`
       }
@@ -37,7 +37,7 @@ export default function Reservations(){
 
 async function deleteReservation (id) {
   try{
-    let res = await axios.delete(`http://${dom}/web/delete_reservation_by_id/${id}`, {
+    let res = await axios.delete(`https://${dom}/web/delete_reservation_by_id/${id}`, {
         headers : {
           'Authorization': `Bearer ${token}`
         }
@@ -72,7 +72,7 @@ async function deleteReservation (id) {
           </thead>
           <tbody>
             {showReservations}
-            <tr>
+            {/* <tr>
               <td>1</td>
               <td>#12</td>
               <td>Samer Mohammad</td>
@@ -119,7 +119,7 @@ async function deleteReservation (id) {
               <td>Santiago Beranbue</td>
               <td>23/8/2024</td>
               <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </div>

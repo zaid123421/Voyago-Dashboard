@@ -20,7 +20,7 @@ export default function PresistLogin(){
 useEffect(() => {
   async function refresh(){
     try {
-      await axios.post(`http://${dom}/web/token`,{
+      await axios.post(`https://${dom}/web/token`,{
         token: cookie.get('userRefreshToken')
       })
       .then((data) => {

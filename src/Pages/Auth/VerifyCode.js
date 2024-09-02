@@ -33,7 +33,7 @@ async function Submit(e) {
   e.preventDefault();
   setAccept(true);
   try {
-    let res = await axios.post('http:///web/check_verification_code', {
+    let res = await axios.post('https:///web/check_verification_code', {
       email: emailContext.authe.email,
       cod: parseInt(combined)
     });

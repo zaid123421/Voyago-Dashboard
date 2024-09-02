@@ -25,7 +25,7 @@ export default function Sidebar(props) {
   const cookie = new Cookies();
 
   function handleLogout() {
-    axios.delete(`http://${dom}/web/logout`, {
+    axios.delete(`https://${dom}/web/logout`, {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'

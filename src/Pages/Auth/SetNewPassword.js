@@ -29,7 +29,7 @@ async function Submit(e) {
   } else flag = true;
   try {
     if(flag){
-      let res = await axios.post(`http://${dom}/web/reset_password`, {
+      let res = await axios.post(`https://${dom}/web/reset_password`, {
         email: emailContext.authe.email,
         password: password
       });

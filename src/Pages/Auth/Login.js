@@ -26,7 +26,7 @@ export default function Login() {
     e.preventDefault();
     setAccept(true);
     try {
-      let res = await axios.post(`http://${dom}/web/login`, {
+      let res = await axios.post(`https://${dom}/web/login`, {
         email: email,
         password: password,
       });

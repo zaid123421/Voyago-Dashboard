@@ -10,7 +10,7 @@ export default function Destinations() {
   const [runUseEffect, setRun] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://${dom}/web/destenations`)
+    axios.get(`https://${dom}/web/destenations`)
       .then((response) => {
         console.log(response.data);
         setDestinations(response.data.data);

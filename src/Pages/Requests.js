@@ -11,7 +11,7 @@ export default function Requests() {
   const userInfo = useContext(User);
   const token = userInfo.auth.userAccessToken;
   useEffect(() => {
-    axios.get(`http://${dom}/web/delete_profile_requests`, {
+    axios.get(`https://${dom}/web/delete_profile_requests`, {
       headers : {
         'Authorization': `Bearer ${token}`
       }
@@ -33,7 +33,7 @@ export default function Requests() {
 )
 async function deleteRequest (id) {
   try{
-    let res = await axios.get(`http://${dom}/web/empty_then_delete/${id}`, {
+    let res = await axios.get(`https://${dom}/web/empty_then_delete/${id}`, {
         headers : {
           'Authorization': `Bearer ${token}`
         }

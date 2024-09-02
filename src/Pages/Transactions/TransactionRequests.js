@@ -14,19 +14,18 @@ export default function TransactionRequests() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/web/charge_requests`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setRequests(res.data.data))
-      .catch((err) => console.log(err));
+    axios.get(`https://localhost:3000/web/charge_requests`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => setRequests(res.data.data))
+    .catch((err) => console.log(err));
   }, [runUseEffect]);
 
   async function handleApprove(id) {
     try {
-      let res = await axios.get(`http://${dom}/web/approve_charge/${id}`, {
+      let res = await axios.get(`https://${dom}/web/approve_charge/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +39,7 @@ export default function TransactionRequests() {
 
   async function handleReject(id) {
     try {
-      let res = await axios.get(`http://${dom}/web/reject_charge/${id}`, {
+      let res = await axios.get(`https://${dom}/web/reject_charge/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -95,8 +94,8 @@ export default function TransactionRequests() {
             </tr>
           </thead>
           <tbody>
-            {/* {showRequests} */}
-            <tr>
+            {showRequests}
+            {/* <tr>
               <td>3</td>
               <td>Mona</td>
               <td>1500</td>
@@ -140,10 +139,10 @@ export default function TransactionRequests() {
                   <span>Refuse</span>
                 </div>
               </td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
-        {/* {selectedImage && (
+        {selectedImage && (
           <div className="modal" onClick={() => setSelectedImage(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <span className="close" onClick={() => setSelectedImage(null)}>
@@ -152,7 +151,7 @@ export default function TransactionRequests() {
               <img src={selectedImage} alt="Bank Ticket" />
             </div>
           </div>
-        )} */}
+        )}
       </div>
     </>
   );

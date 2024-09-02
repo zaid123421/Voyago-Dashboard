@@ -51,11 +51,11 @@ const inputRefs = {
 };
 
 
-// useEffect(() => {
-//     axios.post(`http://${dom}/web/forget_password`,{
-//       email: emailContext.authe.email
-//     })
-// },[]);
+useEffect(() => {
+    axios.post(`https://${dom}/web/forget_password`,{
+      email: emailContext.authe.email
+    })
+},[]);
 
 // handleSubmit
 async function Submit(e) {
@@ -63,7 +63,7 @@ async function Submit(e) {
   const combined = `${inputs.input1}${inputs.input2}${inputs.input3}${inputs.input4}${inputs.input5}`;
   setCombinedInputs(combined);
   try {
-    let res = await axios.post(`http://${dom}/web/check_verification_code`, {
+    let res = await axios.post(`https://${dom}/web/check_verification_code`, {
       email: emailContext.authe.email,
       cod: parseInt(combined)
     });

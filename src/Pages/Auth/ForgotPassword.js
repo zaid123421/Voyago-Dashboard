@@ -28,7 +28,7 @@ async function Submit(e) {
   } else flag = true;
   try {
     if(flag) {
-      let res = await axios.post(`http://${dom}/web/forget_password`, {
+      let res = await axios.post(`https://${dom}/web/forget_password`, {
         email: email
       });
       if(res.status === 200){

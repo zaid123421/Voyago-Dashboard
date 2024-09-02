@@ -86,7 +86,7 @@ function handleOpenImage() {
 
   // Get Features
   useEffect(() => {
-    axios.get(`http://${dom}/web/features_included`)
+    axios.get(`https://${dom}/web/features_included`)
       .then((response) => {
         setFeatures(response.data.features);
       })
@@ -158,7 +158,7 @@ function handleOpenImage() {
 
   // Get Destinations
   useEffect(() => {
-    axios.get(`http://${dom}/web/destenations`)
+    axios.get(`https://${dom}/web/destenations`)
     .then((response) => {
       setDestinations(response.data.data);
     })
@@ -174,7 +174,7 @@ function handleOpenImage() {
 
   // Get Attractions
   useEffect(() => {
-    axios.get(`http://${dom}/web/attractions`)
+    axios.get(`https://${dom}/web/attractions`)
     .then((response) => {
       setAttractions(response.data.data);
     })
@@ -310,7 +310,7 @@ function handleOpenImage() {
     const data = prepareDataForSubmission();
     console.log(data);
     try {
-      const res = await axios.post(`http://${dom}/web/add_trip`,
+      const res = await axios.post(`https://${dom}/web/add_trip`,
         data, {
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -337,7 +337,7 @@ function handleOpenImage() {
       formData.append('image', images[i]);
     }
     try {
-      const res = await axios.post(`http://${dom}/web/upload_trip_images`,
+      const res = await axios.post(`https://${dom}/web/upload_trip_images`,
         formData, {
           headers: {
             'Authorization': `Bearer ${token}`,

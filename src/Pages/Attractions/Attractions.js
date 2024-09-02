@@ -10,7 +10,7 @@ export default function Attractions() {
   const [runUseEffect, setRun] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://${dom}/web/attractions`)
+    axios.get(`https://${dom}/web/attractions`)
       .then((response) => {
         console.log(response.data);
         setAttractions(response.data.data);

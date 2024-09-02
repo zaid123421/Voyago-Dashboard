@@ -12,7 +12,7 @@ export default function ShowAllTransactions() {
   const [transactions, setTransactions] = useState([{}]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/web/show_all_transactions`, {
+    axios.get(`https://localhost:3000/web/show_all_transactions`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -71,8 +71,8 @@ export default function ShowAllTransactions() {
             </tr>
           </thead>
           <tbody>
-            {/* {showTrans} */}
-            <tr>
+            {showTrans}
+            {/* <tr>
               <td>1</td>
               <td>Ahmad Mohsen</td>
               <td>Mona</td>
@@ -125,7 +125,7 @@ export default function ShowAllTransactions() {
               <td><button className = "credit-bt">Credit</button></td>
               <td><button className = "pending">Pending</button></td>
               <td>18/8/2024</td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </div>

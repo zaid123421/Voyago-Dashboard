@@ -49,7 +49,7 @@ async function Submit(e){
     data.append('image', images[i]);
   }
   try {
-    const res = await axios.post(`http://${dom}/web/add_destenation`, data, {
+    const res = await axios.post(`https://${dom}/web/add_destenation`, data, {
         headers: {
           'Authorization': `Bearer ${token}`,
         }

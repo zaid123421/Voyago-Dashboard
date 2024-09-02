@@ -38,90 +38,90 @@ export default function Dashboard() {
   });
 
   // Get top cards infromation overview
-  // useEffect(() => {
-  //   let res = axios.get(`https://${dom}/web/overview_users`,
-  //     {
-  //       headers : {
-  //         'Authorization': `Bearer ${token}`
-  //       }
-  //     }
-  //   )
-  //   .then((res) => {
-  //     setTotalUsers(res.data.data.total_users)
-  //     setTotalBookings(res.data.data.total_booking)
-  //     setTodayUsers(res.data.data.todayUsers)
-  //     setTodayBookings(res.data.data.todayBookings)
-  //   })
-  // }, [])
+  useEffect(() => {
+    let res = axios.get(`https://${dom}/web/overview_users`,
+      {
+        headers : {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    )
+    .then((res) => {
+      setTotalUsers(res.data.data.total_users)
+      setTotalBookings(res.data.data.total_booking)
+      setTodayUsers(res.data.data.todayUsers)
+      setTodayBookings(res.data.data.todayBookings)
+    })
+  })
 
   // Get top trips overview
-  // useEffect(() => {
-  //   let res1 = axios.get(`https://${dom}/web/top_trips`,
-  //     {
-  //       headers : {
-  //         'Authorization': `Bearer ${token}`
-  //       }
-  //     }
-  //   ).then((res) => {
-  //     console.log(res.data.data.result)
-  //     setTopTrips(res.data.data.result)
-  //   })
-  // }, [])
+  useEffect(() => {
+    let res1 = axios.get(`https://${dom}/web/top_trips`,
+      {
+        headers : {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    ).then((res) => {
+      console.log(res.data.data.result)
+      setTopTrips(res.data.data.result)
+    })
+  })
 
   // Get top desinations overview
-  // useEffect(() => {
-  //   let res2 = axios.get(`https://${dom}/web/top_destinations`,
-  //     {
-  //       headers : {
-  //         'Authorization': `Bearer ${token}`
-  //       }
-  //     }
-  //   ).then((res) => {
-  //     console.log(res.data.data.result)
-  //     setTopDestinations(res.data.data.result)
-  //   })
-  // }, [])
+  useEffect(() => {
+    let res2 = axios.get(`https://${dom}/web/top_destinations`,
+      {
+        headers : {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    ).then((res) => {
+      console.log(res.data.data.result)
+      setTopDestinations(res.data.data.result)
+    })
+  })
 
-  // const showTopDestinations = topDestinations.map((topDestination, index) => {
-  //   const rate = parseFloat(topDestination.rate);
-  //   const starCount = !isNaN(rate) ? (rate === 0 ? 1 : Math.min(Math.max(Math.floor(rate), 0), 5)) : 0;
-  //   const stars = [];
-  //   for (let i = 0; i < starCount; i++) {
-  //     stars.push(<i key={i} className="fa-solid fa-star"></i>);
-  //   }
-  //   return (
-  //     <tr key={index}>
-  //       <td className="fw-300">{index + 1}</td>
-  //       <td className="fw-300"><p>{topDestination.name}</p></td>
-  //       <td>
-  //         <div>
-  //           {stars}
-  //         </div>
-  //       </td>
-  //     </tr>
-  //   );
-  // });
+  const showTopDestinations = topDestinations.map((topDestination, index) => {
+    const rate = parseFloat(topDestination.rate);
+    const starCount = !isNaN(rate) ? (rate === 0 ? 1 : Math.min(Math.max(Math.floor(rate), 0), 5)) : 0;
+    const stars = [];
+    for (let i = 0; i < starCount; i++) {
+      stars.push(<i key={i} className="fa-solid fa-star"></i>);
+    }
+    return (
+      <tr key={index}>
+        <td className="fw-300">{index + 1}</td>
+        <td className="fw-300"><p>{topDestination.name}</p></td>
+        <td>
+          <div>
+            {stars}
+          </div>
+        </td>
+      </tr>
+    );
+  });
 
-  // const showTopTrips = topTrips.map((topTrip, index) => {
-  //   const rate = parseFloat(topTrip.rate);
-  //   const starCount = !isNaN(rate) ? (rate === 0 ? 1 : Math.min(Math.max(Math.floor(rate), 0), 5)) : 0;
-  //   const stars = [];
-  //   for (let i = 0; i < starCount; i++) {
-  //     stars.push(<i key={i} className="fa-solid fa-star"></i>);
-  //   }
-  //   return (
-  //     <tr key={index}>
-  //       <td className="fw-300">{index + 1}</td>
-  //       <td className="fw-300"><p>{topTrip.name}</p></td>
-  //       <td>
-  //         <div className = "d-flex justify-c">
-  //           {stars}
-  //         </div>
-  //       </td>
-  //       <td className="fw-300"><span>{topTrip.bookings}</span></td>
-  //     </tr>
-  //   );
-  // });
+  const showTopTrips = topTrips.map((topTrip, index) => {
+    const rate = parseFloat(topTrip.rate);
+    const starCount = !isNaN(rate) ? (rate === 0 ? 1 : Math.min(Math.max(Math.floor(rate), 0), 5)) : 0;
+    const stars = [];
+    for (let i = 0; i < starCount; i++) {
+      stars.push(<i key={i} className="fa-solid fa-star"></i>);
+    }
+    return (
+      <tr key={index}>
+        <td className="fw-300">{index + 1}</td>
+        <td className="fw-300"><p>{topTrip.name}</p></td>
+        <td>
+          <div className = "d-flex justify-c">
+            {stars}
+          </div>
+        </td>
+        <td className="fw-300"><span>{topTrip.bookings}</span></td>
+      </tr>
+    );
+  });
 
   return(
     <>
@@ -133,8 +133,8 @@ export default function Dashboard() {
         <h4 className = "mb-20">Total Users</h4>
         <div className = "overview-box-content">
           <h2>
-            {/* {totalUsers} */}
-            24530
+            {totalUsers}
+            {/* 24530 */}
           </h2>
           <i className = "fa-solid fa-users"></i>
         </div>
@@ -143,8 +143,8 @@ export default function Dashboard() {
         <h4 className = "mb-20">Total Bookings</h4>
         <div className = "overview-box-content">
           <h2>
-            {/* {totalBookings} */}
-            31753
+            {totalBookings}
+            {/* 31753 */}
           </h2>
           <i className = "fa-solid fa-money-check"></i>
         </div>
@@ -153,8 +153,8 @@ export default function Dashboard() {
         <h4 className = "mb-20">Today's New Users</h4>
         <div className = "overview-box-content">
           <h2>
-            {/* {todayUsers} */}
-            552
+            {todayUsers}
+            {/* 552 */}
           </h2>
           <i className = "fa-solid fa-user-plus"></i>
         </div>
@@ -163,8 +163,8 @@ export default function Dashboard() {
         <h4 className = "mb-20">Today's New Bookings</h4>
         <div className = "overview-box-content">
           <h2>
-            {/* {todayBookings} */}
-            954
+            {todayBookings}
+            {/* 954 */}
           </h2>
           <i className = "fa-solid fa-money-check"></i>
         </div>
@@ -188,8 +188,8 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {/* {showTopTrips} */}
-              <tr>
+              {showTopTrips}
+              {/* <tr>
                 <td className="fw-300">1</td>
                 <td className="fw-300"><p>3 Days in Maldiv</p></td>
                 <td>
@@ -257,7 +257,7 @@ export default function Dashboard() {
                   </div>
                 </td>
                 <td className="fw-300"><span>123</span></td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
@@ -272,8 +272,8 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {/* {showTopDestinations} */}
-              <tr>
+              {showTopDestinations}
+              {/* <tr>
                 <td className="fw-300">1</td>
                 <td className="fw-300"><p>Madrid</p></td>
                 <td>
@@ -335,7 +335,7 @@ export default function Dashboard() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

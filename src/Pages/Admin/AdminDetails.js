@@ -20,7 +20,7 @@ export default function AdminDetails() {
 
 // useEffect
   useEffect(() => {
-    fetch(`http://${dom}/web/admins/${id}`)
+    fetch(`https://${dom}/web/admins/${id}`)
     .then((res) => res.json())
     .then((res) => {
       setName(res.data.admin.username)
@@ -32,7 +32,7 @@ export default function AdminDetails() {
   
   async function deleteUser(id) {
     try{
-      let res = await axios.delete(`http://${dom}/web/delete_admin/${id}`,);
+      let res = await axios.delete(`https://${dom}/web/delete_admin/${id}`,);
       if(res.status === 200)
       setRun((prev) => prev + 1);
       nav('/admins')

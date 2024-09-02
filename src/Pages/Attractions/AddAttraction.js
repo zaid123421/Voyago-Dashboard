@@ -51,7 +51,7 @@ async function Submit(e){
     data.append('image', images[i]);
   }
   try {
-    const res = await axios.post(`http://${dom}/web/add_attraction`, data, {
+    const res = await axios.post(`https://${dom}/web/add_attraction`, data, {
         headers: {
           'Authorization': `Bearer ${token}`,
         }
@@ -65,7 +65,7 @@ async function Submit(e){
 }
 
 useEffect(() => {
-  axios.get(`http://${dom}/web/destenations`)
+  axios.get(`https://${dom}/web/destenations`)
     .then((response) => {
       setDestinations(response.data.data);
     })

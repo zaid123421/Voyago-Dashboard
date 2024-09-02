@@ -20,7 +20,7 @@ const nav = useNavigate();
 
 // useEffect
   useEffect(() => {
-    fetch(`http://${dom}/web/users/${id}`)
+    fetch(`https://${dom}/web/users/${id}`)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -28,11 +28,11 @@ const nav = useNavigate();
       setEmail(res.data.user.email)
       setCreatedAt(res.data.user.createdAt)
     })
-  }, [])
+  })
 
   async function deleteUser (id) {
     try{
-      let res = await axios.delete(`http://${dom}/web/delete_user/${id}`,);
+      let res = await axios.delete(`https://${dom}/web/delete_user/${id}`,);
       if(res.status === 200)
       setRun((prev) => prev + 1);
       nav('/users')

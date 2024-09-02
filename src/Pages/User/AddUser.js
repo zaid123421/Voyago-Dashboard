@@ -23,7 +23,7 @@ export default function AddUser() {
     } else flag = true;
     try {
       if(flag) {
-        let res = await axios.post(`http://${dom}/web/add_user`, {
+        let res = await axios.post(`https://${dom}/web/add_user`, {
           username: username,
           email: email,
           password: password,

@@ -11,7 +11,7 @@ export default function Trips() {
   const [days, setDays] = useState();
 
   useEffect(() => {
-    axios.get(`http://${dom}/web/trip_cards`)
+    axios.get(`https://${dom}/web/trip_cards`)
       .then((response) => {
         console.log(response.data.data.cards);
         setTrips(response.data.data.cards);
@@ -101,7 +101,7 @@ export default function Trips() {
 
   async function deleteTrip(id) {
     try{
-      let res = await axios.delete(`http://${dom}/web/delete_trip/${id}`);
+      let res = await axios.delete(`https://${dom}/web/delete_trip/${id}`);
       if(res.status === 200)
       setRun((prev) => prev + 1);
     }
