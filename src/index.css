@@ -528,6 +528,7 @@ body {
     margin-right: 20px;
     margin-top: -40px;
   }
+  .admin-logo,
   .verify-img,
   .auth-card .second-child .login-text {
     display: none;
@@ -551,6 +552,10 @@ body {
   }
   .error-verify {
     transform: translate(-5px, 60px) !important;
+  }
+  .auth-card .first-child > div div {
+    display: flex;
+    flex-direction: column;
   }
 }
 @media(max-width: 550px){

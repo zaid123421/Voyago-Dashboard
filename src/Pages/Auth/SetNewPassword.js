@@ -53,6 +53,7 @@ async function Submit(e) {
             <div>
               <label htmlFor = 'setpassword'>Create Password</label>
               <input
+                autoFocus
                 id = 'setpassword'
                 className = 'main-input mt-15'
                 type = "password"
