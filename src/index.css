@@ -503,6 +503,12 @@ body {
   width: 300px;
   transform: translate(30px, 175px);
 }
+@media (min-width: 1025px) {
+  .smalllightlogo,
+  .smalldarklogo {
+    display: none;
+  }
+}
 @media(max-width: 1024px){
   .auth-card{
     width: 100%;
@@ -530,9 +536,9 @@ body {
   }
   .admin-logo,
   .verify-img,
-  .auth-card .second-child .login-text {
-    display: none;
-  }
+  .lightlogo,
+  .darklogo,
+  .auth-card .second-child .login-text,
   .second-child .forgot-password-img {
     display: none;
   }
@@ -556,6 +562,34 @@ body {
   .auth-card .first-child > div div {
     display: flex;
     flex-direction: column;
+  }
+  .sidebar {
+    width: 100px !important;
+  }
+  .header {
+    width: calc(100% - 100px) !important;
+  }
+  .header .dark-mode-container {
+    width: 90px;
+  }
+  .content {
+    margin-left: 100px !important;
+  }
+  .sidebar div:nth-of-type(2) span {
+    display: none;
+  }
+  .item-link {
+    width: 35px !important;
+    margin: 5px auto !important;
+    padding: 7px 0px !important;
+  }
+  .item-link i {
+    margin: 0 !important;
+    flex: 1;
+  }
+  .smalllightlogo,
+  .smalldarklogo {
+    width: 50px;
   }
 }
 @media(max-width: 550px){
@@ -590,6 +624,28 @@ body {
   .error-verify {
     transform: translate(-5px, 40px) !important;
   }
+  .sidebar {
+    width: 60px !important;
+  }
+  .header {
+    width: calc(100% - 60px) !important;
+  }
+  .content {
+    margin-left: 40px !important;
+  }
+  .header .avatar-text h3 {
+    font-size: 12px !important;
+  }
+  .header .avatar-text h4 {
+    font-size: 10px !important;
+  }
+  .header img{
+    width: 50px !important;
+  }
+  .smalllightlogo,
+  .smalldarklogo {
+    width: 35px;
+  }
 }
 /* End Auth */
 
@@ -615,7 +671,7 @@ body {
   margin-bottom: 3px;
 }
 .sidebar {
-  min-height: 1000vh;
+  min-height: 100%;
   background-color: var(--cards-color);
   width: 300px;
   position: fixed;

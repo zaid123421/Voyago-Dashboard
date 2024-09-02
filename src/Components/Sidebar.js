@@ -7,6 +7,8 @@ import Cookies from 'universal-cookie';
 import { dom } from '../Pages/dom';
 import darklogo from '../images/Asset 17.png';
 import { MyStringContext } from '../Pages/MyStringProvider';
+import smallwhitelogo from '../images/smallwhitelogo.png';
+import smalldarklogo from '../images/smalldarklogo.png';
 
 export default function Sidebar(props) {
   // useNavigate
@@ -49,51 +51,54 @@ export default function Sidebar(props) {
     <div className = 'sidebar'> 
     <div className = 'logo-text mb-20 d-flex justify-c'>
       {
-        myString === "dark" ? <img alt='logo' src = {logo} />:
-        myString === "light" ? <img className='darklogo' alt='logo' src = {darklogo} />: ''
+        myString === "dark" ? <img className='lightlogo' alt='lightlogo' src = {logo} />:
+        myString === "light" ? <img className='darklogo' alt='darklogo' src = {darklogo} />: ''
       }
-      
+      {
+        myString === "dark" ? <img className='smalllightlogo' alt='smalllightlogo' src = {smallwhitelogo} />:
+        myString === "light" ? <img className='smalldarklogo' alt='smalldarklogo' src = {smalldarklogo} />: ''
+      }
     </div>
       <div className = 'nav-links d-flex flex-d-c'>
         <NavLink to = "/dashboard" className = {props.number === 1 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-chart-simple fs-18"></i>
-          Dashboard
+          <span>Dashboard</span>
         </NavLink>
         <NavLink to = "/admins" className = {props.number === 2 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-user-tie fs-18"></i>
-          Admins
+          <span>Admins</span>
         </NavLink>
         <NavLink to = "/users" className = {props.number === 3 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-users fs-18"></i>
-          Users
+          <span>Users</span>
         </NavLink>
         <NavLink to = "/trips" className = {props.number === 4 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-briefcase fs-18"></i>
-          Trips
+          <span>Trips</span>
         </NavLink>
         <NavLink to = "/attractions" className = {props.number === 5 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
         <i className = "fa-solid fa-globe"></i>
-          Attractions
+          <span>Attractions</span>
         </NavLink>
         <NavLink to = "/destinations" className = {props.number === 6 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-location-dot"></i>
-          Destinations
+          <span>Destinations</span>
         </NavLink>
         <NavLink to = "/reservations" className = {props.number === 7 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className="fa-solid fa-table-list"></i>
-          Reservations
+          <span>Reservations</span>
         </NavLink>
         <NavLink to = "/transactions" className = {props.number === 8 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-solid fa-money-bill-transfer"></i>
-          Transactions
+          <span>Transactions</span>
         </NavLink>
         <NavLink to = "/requests" className = {props.number === 9 ? "active-link d-flex align-c item-link" : "d-flex align-c item-link"}>
           <i className = "fa-regular fa-hand"></i>
-          Requests
+          <span>Requests</span>
         </NavLink>
         <button onClick= {handleLogout} className = "d-flex align-c item-link logout">
           <i className="fa-solid fa-arrow-right-from-bracket fs-18"></i>
-          Log Out
+          <span>Log Out</span>
         </button>
       </div>
     </div>

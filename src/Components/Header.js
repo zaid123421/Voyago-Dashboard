@@ -10,7 +10,9 @@ export default function Header() {
   return(
     <div className = 'header d-flex align-c'>
       <div className = 'd-flex'>
-        <DarkMode />
+        <div className='dark-mode-container'>
+          <DarkMode />
+        </div>
         <div className = 'avatar-text d-flex flex-d-c justify-c'>
           <h3 className = 'fw-600'>
             {userInfo.auth.userName}
@@ -21,7 +23,7 @@ export default function Header() {
             Super Admin
           </h4>
         </div>
-        <img alt = 'avatar' src = {avatar} />
+          <img alt = 'avatar' src = {avatar} />
       </div>
   </div>
   )
