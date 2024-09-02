@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Voyago-Dashboard/static/css/main.f147351f.css",
-    "main.js": "/Voyago-Dashboard/static/js/main.ae094fae.js",
+    "main.js": "/Voyago-Dashboard/static/js/main.5ebe9b2e.js",
     "static/js/453.59b8a61b.chunk.js": "/Voyago-Dashboard/static/js/453.59b8a61b.chunk.js",
     "static/media/spain.jpg": "/Voyago-Dashboard/static/media/spain.091df2e1873c7c6b1798.jpg",
     "static/media/santiago.jpg": "/Voyago-Dashboard/static/media/santiago.f97255f33ad989aee0fd.jpg",
@@ -14,11 +14,11 @@
     "index.html": "/Voyago-Dashboard/index.html",
     "static/media/Moon.svg": "/Voyago-Dashboard/static/media/Moon.a11db6528b039b6c36c8720d288f7943.svg",
     "main.f147351f.css.map": "/Voyago-Dashboard/static/css/main.f147351f.css.map",
-    "main.ae094fae.js.map": "/Voyago-Dashboard/static/js/main.ae094fae.js.map",
+    "main.5ebe9b2e.js.map": "/Voyago-Dashboard/static/js/main.5ebe9b2e.js.map",
     "453.59b8a61b.chunk.js.map": "/Voyago-Dashboard/static/js/453.59b8a61b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f147351f.css",
-    "static/js/main.ae094fae.js"
+    "static/js/main.5ebe9b2e.js"
   ]
 }
