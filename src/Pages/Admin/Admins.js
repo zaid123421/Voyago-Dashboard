@@ -53,7 +53,7 @@ async function deleteUser (id) {
             </tr>
           </thead>
           <tbody>
-            {/* {showAdmins} */}
+            {showAdmins}
             <tr>
               <td>1</td>
               <td>Ramez Barakah </td>
