@@ -84,7 +84,7 @@ const handleChange = (e) => {
         </div>
           <h1 className = 'mt-75 mb-30'>Verify code</h1>
           <p className = 'mb-50'>Enter the verification code we sent to your email</p>
-          <div className = 'five-fields d-flex justify-c align-c flex-wrap mr-15'>
+          <div className = 'five-fields d-flex justify-c align-c'>
             {/* <input
               min = "1"
               max = "5"
@@ -92,14 +92,14 @@ const handleChange = (e) => {
               className = 'second-input mb-30'
               value = {code}
               onChange = {(e) => setCode(e.target.value)} /> */}
-            <input autoFocus ref = {inputRefs.input1} className = 'second-input mb-30' type="text" name="input1" value={inputs.input1} onChange={handleChange} />
-            <input ref = {inputRefs.input2} className = 'second-input mb-30' type="text" name="input2" value={inputs.input2} onChange={handleChange} />
-            <input ref = {inputRefs.input3} className = 'second-input mb-30' type="text" name="input3" value={inputs.input3} onChange={handleChange} />
-            <input ref = {inputRefs.input4} className = 'second-input mb-30' type="text" name="input4" value={inputs.input4} onChange={handleChange} />
-            <input ref = {inputRefs.input5}className = 'second-input mb-30' type="text" name="input5" value={inputs.input5} onChange={handleChange} />
+            <input autoFocus ref = {inputRefs.input1} className = 'second-input mb-30' type="number" name="input1" value={inputs.input1} onChange={handleChange} />
+            <input ref = {inputRefs.input2} className = 'second-input mb-30' type="number" name="input2" value={inputs.input2} onChange={handleChange} />
+            <input ref = {inputRefs.input3} className = 'second-input mb-30' type="number" name="input3" value={inputs.input3} onChange={handleChange} />
+            <input ref = {inputRefs.input4} className = 'second-input mb-30' type="number" name="input4" value={inputs.input4} onChange={handleChange} />
+            <input ref = {inputRefs.input5} className = 'second-input mb-30' type="number" name="input5" value={inputs.input5} onChange={handleChange} />
             {accept && error === 406 && <p className = 'error-verify fs-14 position-absolute color-red'>Invalid Code</p>}
-            <button className = 'special-button' onClick = {Submit}>Verify</button>
           </div>
+            <button className = 'special-button w-full' onClick = {Submit}>Verify</button>
       </div>
       <div className = "second-child">
         <img className = 'verify-img' src = {lock} alt = 'Lock'></img>

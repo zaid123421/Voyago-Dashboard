@@ -27,7 +27,7 @@ export default function App() {
   return (
     <div style={{color: "white"}}>
       <Routes>
-        <Route path="/" exact element={<Login />} />
+        <Route path="/" exact element={<VerifyCode />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/superadmincode" element={<SuperAdminCode />} />
         <Route path="/verifycode" element={<VerifyCode />} />
