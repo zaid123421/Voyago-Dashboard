@@ -435,7 +435,6 @@ body {
   box-shadow: var(--box-shadow);
 }
 .auth-card .first-child {
-  color: red !important;
   width: 50%;
   background-color: var(--login-background);
   border-radius: 15px;
