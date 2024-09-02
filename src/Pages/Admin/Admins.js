@@ -10,7 +10,7 @@ export default function Admins() {
   const [runUseEffect, setRun] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://${dom}/web/admins`, )
+    axios.get(`https://${dom}/web/admins`, )
     .then((data) => setAdmins(data.data.admins))
     .catch((err) => console.log(err));
   }, [runUseEffect])

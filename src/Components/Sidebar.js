@@ -48,7 +48,7 @@ export default function Sidebar(props) {
   }
   const { myString, setMyString } = useContext(MyStringContext);
   return(
-    <div className = 'sidebar'> 
+    <div className = 'sidebar'>
     <div className = 'logo-text mb-20 d-flex justify-c'>
       {
         myString === "dark" ? <img className='lightlogo' alt='lightlogo' src = {logo} />:

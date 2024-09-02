@@ -39,7 +39,7 @@ export default function Dashboard() {
 
   // Get top cards infromation overview
   // useEffect(() => {
-  //   let res = axios.get(`http://${dom}/web/overview_users`,
+  //   let res = axios.get(`https://${dom}/web/overview_users`,
   //     {
   //       headers : {
   //         'Authorization': `Bearer ${token}`
@@ -56,7 +56,7 @@ export default function Dashboard() {
 
   // Get top trips overview
   // useEffect(() => {
-  //   let res1 = axios.get(`http://${dom}/web/top_trips`,
+  //   let res1 = axios.get(`https://${dom}/web/top_trips`,
   //     {
   //       headers : {
   //         'Authorization': `Bearer ${token}`
@@ -70,7 +70,7 @@ export default function Dashboard() {
 
   // Get top desinations overview
   // useEffect(() => {
-  //   let res2 = axios.get(`http://${dom}/web/top_destinations`,
+  //   let res2 = axios.get(`https://${dom}/web/top_destinations`,
   //     {
   //       headers : {
   //         'Authorization': `Bearer ${token}`

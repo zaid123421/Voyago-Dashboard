@@ -47,7 +47,7 @@ async function Submit(e) {
     <div className = 'auth-card position-absolute'>
       <div className = 'first-child align-s'>
         <div className = 'back-to-login mt-15'>
-          <NavLink to = '/Voyago-dashboard'>
+          <NavLink to = '/'>
             <i className="fa-solid fa-angle-left fs-14"></i>
             Back To Login Page
           </NavLink>

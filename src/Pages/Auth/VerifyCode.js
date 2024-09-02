@@ -85,13 +85,6 @@ const handleChange = (e) => {
           <h1 className = 'mt-75 mb-30'>Verify code</h1>
           <p className = 'mb-50'>Enter the verification code we sent to your email</p>
           <div className = 'five-fields d-flex justify-c align-c'>
-            {/* <input
-              min = "1"
-              max = "5"
-              type = "number"
-              className = 'second-input mb-30'
-              value = {code}
-              onChange = {(e) => setCode(e.target.value)} /> */}
             <input autoFocus ref = {inputRefs.input1} className = 'second-input mb-30' type="number" name="input1" value={inputs.input1} onChange={handleChange} />
             <input ref = {inputRefs.input2} className = 'second-input mb-30' type="number" name="input2" value={inputs.input2} onChange={handleChange} />
             <input ref = {inputRefs.input3} className = 'second-input mb-30' type="number" name="input3" value={inputs.input3} onChange={handleChange} />

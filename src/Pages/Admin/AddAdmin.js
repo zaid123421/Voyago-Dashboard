@@ -23,7 +23,7 @@ export default function AddAdmin() {
     } else flag = true;
     try {
       if(flag) {
-        let res = await axios.post(`http://${dom}/web/add_admin`, {
+        let res = await axios.post(`https://${dom}/web/add_admin`, {
           username: username,
           email: email,
           password: password,
