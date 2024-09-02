@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './all.min.css';
 import UserProvider from './Pages/Context';
 import EmailProvider from './Pages/email';
 import MyStringProvider from './Pages/MyStringProvider';
