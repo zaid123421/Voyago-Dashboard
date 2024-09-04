@@ -78,70 +78,72 @@ export default function TransactionRequests() {
       <div className="content nav-item-content">
         <div className="d-flex align-c">
           <NavLink to="/transactions">
-            <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
+            <i className="fa-solid fa-angle-left arrow-left position-absolute transacion-arrow"></i>
           </NavLink>
           <h1 className="special-head ml-25">Transactions Requests</h1>
         </div>
-        <table className="special-table transaction-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Username</th>
-              <th>Transactions Amount</th>
-              <th>Receipt</th>
-              <th>Date</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {showRequests}
-            {/* <tr>
-              <td>3</td>
-              <td>Mona</td>
-              <td>1500</td>
-              <td>
-                <i className = "fa-solid fa-eye table-icon"></i>
-              </td>
-              <td>18/8/2024</td>
-              <td className="only-this">
-                <div className="d-flex justify-sb">
-                  <span>Accept</span>
-                  <span>Refuse</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Mohanad</td>
-              <td>2000</td>
-              <td>
-                <i className = "fa-solid fa-eye table-icon"></i>
-              </td>
-              <td>19/8/2024</td>
-              <td className="only-this">
-                <div className="d-flex justify-sb">
-                  <span>Accept</span>
-                  <span>Refuse</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Ramy</td>
-              <td>3500</td>
-              <td>
-                <i className = "fa-solid fa-eye table-icon"></i>
-              </td>
-              <td>18/8/2024</td>
-              <td className="only-this">
-                <div className="d-flex justify-sb">
-                  <span>Accept</span>
-                  <span>Refuse</span>
-                </div>
-              </td>
-            </tr> */}
-          </tbody>
-        </table>
+        <div className = "table-container">
+          <table className="special-table transaction-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Transactions Amount</th>
+                <th>Receipt</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* {showRequests} */}
+              <tr>
+                <td>3</td>
+                <td>Mona</td>
+                <td>1500</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>18/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Mohanad</td>
+                <td>2000</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>19/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Ramy</td>
+                <td>3500</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>18/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         {selectedImage && (
           <div className="modal" onClick={() => setSelectedImage(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>

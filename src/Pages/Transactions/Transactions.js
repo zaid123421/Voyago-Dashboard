@@ -56,7 +56,7 @@ export default function ShowAllTransactions() {
       <div className = "content nav-item-content">
         <div className = "d-flex align-c">
           <h1 className = "special-head mr-25">Transactions</h1>
-          <NavLink className= "deposit" to = "/transactionrequests">Transaction Requests</NavLink>
+          <NavLink className= "deposit" to = "/transactionrequests">Transactions Requests</NavLink>
         </div>
         <div className = "table-container">
         <table className = "special-table transaction-table">
@@ -72,7 +72,7 @@ export default function ShowAllTransactions() {
               </tr>
             </thead>
             <tbody>
-              {showTrans}
+              {/* {showTrans} */}
               <tr>
                 <td>1</td>
                 <td>Ahmad Mohsen</td>

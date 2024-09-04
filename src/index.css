@@ -123,7 +123,7 @@ body {
 .special-table th {
   background-color: var(--table-head);
   width: calc(100% / 5);
-  padding: 25px;
+  padding: 20px;
 }
 .special-table th:first-child {
   border-top-left-radius: 15px;
@@ -140,7 +140,7 @@ body {
 .special-table td {
   background-color: var(--table-body);
   text-align: center;
-  padding: 20px 0;
+  padding: 20px;
 }
 .table-icon {
   background-color: var(--table-icon-background);
@@ -669,8 +669,8 @@ body {
     font-size: 14px;
   }
   .special-table td {
-    padding: 5px 0;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 12px;
   }
   .special-head {
     font-size: 18px;
@@ -739,12 +739,27 @@ body {
     height: 25px;
   }
   .transaction-table th, .transaction-table td {
-    padding: 20px 10px !important;
+    padding: 10px !important;
   }
   .deposit {
     font-size: 12px;
     text-align: center;
   }
+  .transacion-arrow {
+    top: 90px !important;
+  }
+  .table-icon {
+    font-size: 12px;
+    padding: 7px;
+  }
+  .delete-action {
+    padding: 5px 10px !important;
+  }
+  .credit-bt, .success, .failed, .pending {
+    font-size: 12px !important;
+    width: 75px !important;
+    padding: 5px 0px !important;
+}
 }
 /* End Auth */
 
@@ -1025,7 +1040,7 @@ select,
 .transaction-table th,
 .transaction-table td {
   width: calc(100% / 7);
-  padding: 25px 0;
+  padding: 20px 10px;
 }
 .transaction-table span {
   display: block;

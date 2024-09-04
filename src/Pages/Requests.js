@@ -54,45 +54,47 @@ async function deleteRequest (id) {
         <div className = "d-flex">
         <h1 className = "special-head">Delete Account Requests</h1>
         </div>
-        <table className = "special-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Request ID</th>
-              <th>Username</th>
-              <th>Balance</th>
-              <th>Date</th>
-              <th>ِAction</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* {showRequests} */}
-            <tr>
-              <td>1</td>
-              <td>#23</td>
-              <td>Sameer</td>
-              <td>1900</td>
-              <td>18/8/2024</td>
-              <td><span className = "delete-action">Accept</span></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>#24</td>
-              <td>Jana</td>
-              <td>0</td>
-              <td>16/8/2024</td>
-              <td><span className = "delete-action">Accept</span></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>#25</td>
-              <td>Reem</td>
-              <td>0</td>
-              <td>16/8/2024</td>
-              <td><span className = "delete-action">Accept</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className = "table-container">
+          <table className = "special-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Request ID</th>
+                <th>Username</th>
+                <th>Balance</th>
+                <th>Date</th>
+                <th>ِAction</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* {showRequests} */}
+              <tr>
+                <td>1</td>
+                <td>#23</td>
+                <td>Sameer</td>
+                <td>1900</td>
+                <td>18/8/2024</td>
+                <td><span className = "delete-action">Accept</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>#24</td>
+                <td>Jana</td>
+                <td>0</td>
+                <td>16/8/2024</td>
+                <td><span className = "delete-action">Accept</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>#25</td>
+                <td>Reem</td>
+                <td>0</td>
+                <td>16/8/2024</td>
+                <td><span className = "delete-action">Accept</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   )
