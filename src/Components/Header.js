@@ -9,7 +9,7 @@ export default function Header() {
 
   return(
     <div className = 'header d-flex align-c'>
-      <div className = 'd-flex'>
+      <div className = 'd-flex align-c '>
         <div className='dark-mode-container'>
           <DarkMode />
         </div>

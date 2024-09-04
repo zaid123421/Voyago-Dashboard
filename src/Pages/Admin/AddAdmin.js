@@ -47,7 +47,7 @@ export default function AddAdmin() {
       <Sidebar number = {2} />
       <div className = "content add-admin-page d-flex align-c justify-c">
         <NavLink to = "/admins">
-          <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
+          <i className="fa-solid fa-angle-left arrow-left"></i>
         </NavLink>
         <div className = "add-card">
           <h2 className = "fw-500 mb-25 text-c">Add A New Admin</h2>

@@ -58,76 +58,78 @@ export default function ShowAllTransactions() {
           <h1 className = "special-head mr-25">Transactions</h1>
           <NavLink className= "deposit" to = "/transactionrequests">Transaction Requests</NavLink>
         </div>
+        <div className = "table-container">
         <table className = "special-table transaction-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Accountant</th>
-              <th>Username</th>
-              <th>Transaction ID</th>
-              <th>Transaction Type</th>
-              <th>Status</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {showTrans}
-            {/* <tr>
-              <td>1</td>
-              <td>Ahmad Mohsen</td>
-              <td>Mona</td>
-              <td>#65</td>
-              <td><button className = "credit-bt">Credit</button></td>
-              <td><button className = "success">Success</button></td>
-              <td>18/8/2024</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Samer Tr</td>
-              <td>Hamza</td>
-              <td>#66</td>
-              <td><button className = "credit-bt">Credit</button></td>
-              <td><button className = "failed">Failed</button></td>
-              <td>18/8/2024</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Ahmad Mohsen</td>
-              <td>Loujain</td>
-              <td>#67</td>
-              <td><button className = "credit-bt">Credit</button></td>
-              <td><button className = "success">Success</button></td>
-              <td>18/8/2024</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>-</td>
-              <td>Mona</td>
-              <td>#68</td>
-              <td><button className = "credit-bt">Credit</button></td>
-              <td><button className = "pending">Pending</button></td>
-              <td>18/8/2024</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>-</td>
-              <td>Mohanad</td>
-              <td>#69</td>
-              <td><button className = "credit-bt">Credit</button></td>
-              <td><button className = "pending">Pending</button></td>
-              <td>18/8/2024</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>-</td>
-              <td>Ramy</td>
-              <td>#70</td>
-              <td><button className = "credit-bt">Credit</button></td>
-              <td><button className = "pending">Pending</button></td>
-              <td>18/8/2024</td>
-            </tr> */}
-          </tbody>
-        </table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Accountant</th>
+                <th>Username</th>
+                <th>Transaction ID</th>
+                <th>Transaction Type</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {showTrans}
+              <tr>
+                <td>1</td>
+                <td>Ahmad Mohsen</td>
+                <td>Mona</td>
+                <td>#65</td>
+                <td><button className = "credit-bt">Credit</button></td>
+                <td><button className = "success">Success</button></td>
+                <td>18/8/2024</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Samer Tr</td>
+                <td>Hamza</td>
+                <td>#66</td>
+                <td><button className = "credit-bt">Credit</button></td>
+                <td><button className = "failed">Failed</button></td>
+                <td>18/8/2024</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Ahmad Mohsen</td>
+                <td>Loujain</td>
+                <td>#67</td>
+                <td><button className = "credit-bt">Credit</button></td>
+                <td><button className = "success">Success</button></td>
+                <td>18/8/2024</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>-</td>
+                <td>Mona</td>
+                <td>#68</td>
+                <td><button className = "credit-bt">Credit</button></td>
+                <td><button className = "pending">Pending</button></td>
+                <td>18/8/2024</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>-</td>
+                <td>Mohanad</td>
+                <td>#69</td>
+                <td><button className = "credit-bt">Credit</button></td>
+                <td><button className = "pending">Pending</button></td>
+                <td>18/8/2024</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>-</td>
+                <td>Ramy</td>
+                <td>#70</td>
+                <td><button className = "credit-bt">Credit</button></td>
+                <td><button className = "pending">Pending</button></td>
+                <td>18/8/2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

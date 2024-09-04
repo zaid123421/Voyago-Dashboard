@@ -38,49 +38,49 @@ export default function Dashboard() {
   });
 
   // Get top cards infromation overview
-  useEffect(() => {
-    let res = axios.get(`https://${dom}/web/overview_users`,
-      {
-        headers : {
-          'Authorization': `Bearer ${token}`
-        }
-      }
-    )
-    .then((res) => {
-      setTotalUsers(res.data.data.total_users)
-      setTotalBookings(res.data.data.total_booking)
-      setTodayUsers(res.data.data.todayUsers)
-      setTodayBookings(res.data.data.todayBookings)
-    })
-  })
+  // useEffect(() => {
+  //   let res = axios.get(`https://${dom}/web/overview_users`,
+  //     {
+  //       headers : {
+  //         'Authorization': `Bearer ${token}`
+  //       }
+  //     }
+  //   )
+  //   .then((res) => {
+  //     setTotalUsers(res.data.data.total_users)
+  //     setTotalBookings(res.data.data.total_booking)
+  //     setTodayUsers(res.data.data.todayUsers)
+  //     setTodayBookings(res.data.data.todayBookings)
+  //   })
+  // })
 
   // Get top trips overview
-  useEffect(() => {
-    let res1 = axios.get(`https://${dom}/web/top_trips`,
-      {
-        headers : {
-          'Authorization': `Bearer ${token}`
-        }
-      }
-    ).then((res) => {
-      console.log(res.data.data.result)
-      setTopTrips(res.data.data.result)
-    })
-  })
+  // useEffect(() => {
+  //   let res1 = axios.get(`https://${dom}/web/top_trips`,
+  //     {
+  //       headers : {
+  //         'Authorization': `Bearer ${token}`
+  //       }
+  //     }
+  //   ).then((res) => {
+  //     console.log(res.data.data.result)
+  //     setTopTrips(res.data.data.result)
+  //   })
+  // })
 
   // Get top desinations overview
-  useEffect(() => {
-    let res2 = axios.get(`https://${dom}/web/top_destinations`,
-      {
-        headers : {
-          'Authorization': `Bearer ${token}`
-        }
-      }
-    ).then((res) => {
-      console.log(res.data.data.result)
-      setTopDestinations(res.data.data.result)
-    })
-  })
+  // useEffect(() => {
+  //   let res2 = axios.get(`https://${dom}/web/top_destinations`,
+  //     {
+  //       headers : {
+  //         'Authorization': `Bearer ${token}`
+  //       }
+  //     }
+  //   ).then((res) => {
+  //     console.log(res.data.data.result)
+  //     setTopDestinations(res.data.data.result)
+  //   })
+  // })
 
   const showTopDestinations = topDestinations.map((topDestination, index) => {
     const rate = parseFloat(topDestination.rate);
@@ -189,7 +189,7 @@ export default function Dashboard() {
             </thead>
             <tbody>
               {showTopTrips}
-              {/* <tr>
+              <tr>
                 <td className="fw-300">1</td>
                 <td className="fw-300"><p>3 Days in Maldiv</p></td>
                 <td>
@@ -201,7 +201,7 @@ export default function Dashboard() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                 </td>
-                <td className="fw-300"><span>768</span></td>
+                <td className="fw-300"><span>1768</span></td>
               </tr>
               <tr>
                 <td className="fw-300">2</td>
@@ -257,7 +257,7 @@ export default function Dashboard() {
                   </div>
                 </td>
                 <td className="fw-300"><span>123</span></td>
-              </tr> */}
+              </tr>
             </tbody>
           </table>
         </div>
@@ -273,7 +273,7 @@ export default function Dashboard() {
             </thead>
             <tbody>
               {showTopDestinations}
-              {/* <tr>
+              <tr>
                 <td className="fw-300">1</td>
                 <td className="fw-300"><p>Madrid</p></td>
                 <td>
@@ -335,7 +335,7 @@ export default function Dashboard() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                 </td>
-              </tr> */}
+              </tr>
             </tbody>
           </table>
         </div>

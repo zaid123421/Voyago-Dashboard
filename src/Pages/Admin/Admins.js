@@ -42,6 +42,7 @@ async function deleteUser (id) {
       <Sidebar number = {2} />
       <div className = "content">
         <h1 className = "special-head">Admins</h1>
+        <div className="table-container">
         <table className = "special-table">
           <thead>
             <tr>
@@ -54,8 +55,30 @@ async function deleteUser (id) {
           </thead>
           <tbody>
             {showAdmins}
+            <tr>
+              <td>01</td>
+              <td>Zaid</td>
+              <td>Accounant</td>
+              <td><Link><i className = "fa-solid fa-eye table-icon"></i></Link></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>Zaid</td>
+              <td>Accounant</td>
+              <td><Link><i className = "fa-solid fa-eye table-icon"></i></Link></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>Zaid</td>
+              <td>Accounant</td>
+              <td><Link><i className = "fa-solid fa-eye table-icon"></i></Link></td>
+              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+            </tr>
           </tbody>
         </table>
+        </div>
           <NavLink className = "floating-button" to = "/addadmin">
             +
           </NavLink>

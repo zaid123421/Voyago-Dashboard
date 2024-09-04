@@ -55,9 +55,9 @@ async function deleteUser (id) {
       <Header />
       <Sidebar number = {3} />
       <div className = "content nav-item-content">
-        <div className = "d-flex">
+        <div className = "d-flex align-c">
         <h1 className = "special-head">Users</h1>
-          <div className = "d-flex align-c ml-50">
+          <div className = "d-flex align-c ml-50 search-box">
             <label htmlFor="search">
               <i className="search-icon fa-solid fa-magnifying-glass position-relative" ></i>
             </label>
@@ -69,6 +69,7 @@ async function deleteUser (id) {
             />
           </div>
         </div>
+        <div className="table-container">
         <table className = "special-table">
           <thead>
             <tr>
@@ -81,7 +82,7 @@ async function deleteUser (id) {
           </thead>
           <tbody>
             {showUsers}
-            {/* <tr>
+            <tr>
               <td>1</td>
               <td>Sameer</td>
               <td>1900</td>
@@ -136,9 +137,10 @@ async function deleteUser (id) {
               <td>2500</td>
               <td><i className = "fa-solid fa-eye table-icon"></i></td>
               <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr> */}
+            </tr>
           </tbody>
         </table>
+        </div>
         <NavLink className = "floating-button" to = "/adduser">
           +
         </NavLink>

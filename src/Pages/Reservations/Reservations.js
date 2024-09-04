@@ -59,69 +59,71 @@ async function deleteReservation (id) {
         <div className = "d-flex">
         <h1 className = "special-head">Reservations</h1>
         </div>
-        <table className = "special-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Reservation ID</th>
-              <th>Username</th>
-              <th>Trip Name</th>
-              <th>Reservation Date</th>
-              <th>ِAction</th>
-            </tr>
-          </thead>
-          <tbody>
-            {showReservations}
-            {/* <tr>
-              <td>1</td>
-              <td>#12</td>
-              <td>Samer Mohammad</td>
-              <td>3 days in mountains</td>
-              <td>23/8/2024</td>
-              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>#13</td>
-              <td>Ramez Mohsen</td>
-              <td>Casablanca</td>
-              <td>23/8/2024</td>
-              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>#14</td>
-              <td>Ayman Alshamaa</td>
-              <td>Casablanca</td>
-              <td>23/8/2024</td>
-              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>#15</td>
-              <td>Zaid Alshamaa</td>
-              <td>Madrid</td>
-              <td>23/8/2024</td>
-              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>#16</td>
-              <td>Mohammad Alkhateb</td>
-              <td>World Cup</td>
-              <td>23/8/2024</td>
-              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>#17</td>
-              <td>Monir Ahmad</td>
-              <td>Santiago Beranbue</td>
-              <td>23/8/2024</td>
-              <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
-            </tr> */}
-          </tbody>
-        </table>
+        <div className = "table-container">
+          <table className = "special-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Reservation ID</th>
+                <th>Username</th>
+                <th>Trip Name</th>
+                <th>Reservation Date</th>
+                <th>ِAction</th>
+              </tr>
+            </thead>
+            <tbody>
+              {showReservations}
+              <tr>
+                <td>1</td>
+                <td>#12</td>
+                <td>Samer Mohammad</td>
+                <td>3 days in mountains</td>
+                <td>23/8/2024</td>
+                <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>#13</td>
+                <td>Ramez Mohsen</td>
+                <td>Casablanca</td>
+                <td>23/8/2024</td>
+                <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>#14</td>
+                <td>Ayman Alshamaa</td>
+                <td>Casablanca</td>
+                <td>23/8/2024</td>
+                <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>#15</td>
+                <td>Zaid Alshamaa</td>
+                <td>Madrid</td>
+                <td>23/8/2024</td>
+                <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>#16</td>
+                <td>Mohammad Alkhateb</td>
+                <td>World Cup</td>
+                <td>23/8/2024</td>
+                <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>#17</td>
+                <td>Monir Ahmad</td>
+                <td>Santiago Beranbue</td>
+                <td>23/8/2024</td>
+                <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );
