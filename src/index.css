@@ -643,7 +643,7 @@ body {
     margin-left: 60px !important;
     overflow: hidden;
     padding: 10px !important;
-    margin-top: 60px;
+    margin-top: 60px !important;
   }
   .header .avatar-text h3 {
     font-size: 13px !important;
