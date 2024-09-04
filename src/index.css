@@ -259,7 +259,7 @@ body {
 }
 .w-100,
 .w-full {
-  width: 100%;
+  width: 100% !important;
 }
 .pr-25 {
   padding-right: 25px;
@@ -512,6 +512,13 @@ body {
   .smalldarklogo {
     display: none;
   }
+  .destination-arrow {
+    top: 103px;
+    left: 315px;
+  }
+  .attraction-arrow {
+    top: 102px;
+  }
 }
 @media(max-width: 1024px){
   .auth-card{
@@ -598,6 +605,13 @@ body {
   .arrow-left {
     top: 85px;
     left: 125px;
+  }
+  .destination-arrow {
+    top: 103px;
+    left: 115px;
+  }
+  .attraction-arrow {
+    top: 103px;
   }
 }
 @media(max-width: 550px){
@@ -691,7 +705,7 @@ body {
   }
   .special-search {
     height: 0;
-    padding: 13px 10px 13px 50px;
+    padding: 15px 10px 15px 50px;
     width: 100%;
   }
   .special-search::placeholder {
@@ -700,7 +714,7 @@ body {
   .arrow-left {
     top: 75px;
     left: 75px;
-    font-size: 18px;
+    font-size: 14px;
   }
   .add-card {
     min-width: 100%;
@@ -712,17 +726,17 @@ body {
     padding: 20px 15px;
   }
   .add-card h2 {
-    font-size: 14px;
+    font-size: 16px;
   }
   .add-card label {
-    font-size: 12px;
+    font-size: 14px;
   }
   .add-card input {
-    padding: 5px;
-    font-size: 12px;
+    padding: 5px 5px 5px 10px;
+    font-size: 14px;
   }
   .add-card input::placeholder {
-    font-size: 10px;
+    font-size: 12px;
   }
   .select, .admin-select {
     width: 140px !important;
@@ -735,8 +749,7 @@ body {
     font-size: 12px;
   }
   .add-button {
-    margin-top: 10px;
-    font-size: 12px;
+    font-size: 14px;
     height: 25px;
   }
   .transaction-table th, .transaction-table td {
@@ -760,7 +773,27 @@ body {
     font-size: 12px !important;
     width: 75px !important;
     padding: 5px 0px !important;
-}
+  }
+  .destination-input {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .destination-input label {
+    margin-bottom: 10px;
+  }
+  .add-destination-details {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+  }
+  .upload-icon {
+    font-size: 65px !important;
+  }
+  .add-destination {
+    margin-top: 30px !important;
+  }
+  .cards-input {
+    height: 150px !important;
+  }
 }
 /* End Auth */
 
@@ -773,6 +806,7 @@ body {
   padding-right: 20px;
   top: 0;
   right: 0;
+  z-index: 100;
 }
 .header img {
   width: 75px;
@@ -1205,7 +1239,7 @@ select,
   min-height: 150px;
   border-radius: 15px !important;
   resize: none;
-  padding: 10px 15px !important;
+  padding: 10px 10px !important;
 }
 .add-destination-details > div:not(:nth-child(2)) div input:focus,
 .add-destination-details div:nth-child(3) textarea:focus {

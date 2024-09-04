@@ -74,15 +74,16 @@ async function Submit(e){
       <Sidebar number = {6} />
       <div className = "content">
         <NavLink to = "/destinations">
-          <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
+          <i className="fa-solid fa-angle-left arrow-left destination-arrow"></i>
         </NavLink>
-        <h1 className = "fw-500 ml-25">Add A New Destination</h1>
+        <h1 className = "fw-500 ml-25 special-head">Add A New Destination</h1>
         <p className = "ml-25 mt-20 fs-18">add the destination's details:</p>
         <div className = "add-destination-details">
           <div>
-            <div className = "mb-15">
+            <div className = "destination-input mb-15 d-flex align-c">
               <label htmlFor = "name" className = "fw-500">Name</label>
               <input
+                className = "w-full"
                 autoFocus
                 id = "name"
                 type = "text"
@@ -91,9 +92,10 @@ async function Submit(e){
                 value = {form.name}
                 onChange = {handleChange}/>
             </div>
-            <div>
+            <div className = "destination-input d-flex align-c">
               <label htmlFor = "location" className = "fw-500">Location</label>
               <input
+                className = "w-full"
                 id = "location"
                 type = "text"
                 name = "location"

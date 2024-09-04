@@ -93,15 +93,16 @@ const showDestinations = destinations.map((destination, index) => {
       <Sidebar number = {5} />
       <div className = "content">
         <NavLink to = "/attractions">
-          <i className="fa-solid fa-angle-left arrow-left position-absolute"></i>
+          <i className="fa-solid fa-angle-left arrow-left attraction-arrow"></i>
         </NavLink>
-        <h1 className = "fw-500 ml-25">Add A New Attraction</h1>
+        <h1 className = "special-head fw-500 ml-25">Add A New Attraction</h1>
         <p className = "ml-25 mt-20 fs-18">add the attraction's details:</p>
         <div className = "add-destination-details">
           <div>
-            <div className = "mb-15">
+            <div className = "d-flex align-c mb-15 destination-input">
               <label htmlFor = "name" className = "fw-500">Name</label>
               <input
+                className = "w-full"
                 autoFocus
                 id = "name"
                 type = "text"
@@ -110,13 +111,15 @@ const showDestinations = destinations.map((destination, index) => {
                 value = {form.name}
                 onChange = {handleChange}/>
             </div>
-            <div className = "div-select position-relative">
+            <div className = "d-flex align-c destination-input div-select position-relative">
               <label htmlFor = "destination" className = "fw-500">Destination</label>
+              <div className = "d-flex align-c">
               <select onChange = {handleSelect} className = "cursor-p fs-15">
                 <option>Select Destination</option>
                 {showDestinations}
               </select>
               <i className = "fa-solid fa-chevron-down arrow-select position-relative cursor-p"></i>
+              </div>
             </div>
           </div>
           <div className = "images-card">
