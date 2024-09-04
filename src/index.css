@@ -643,6 +643,7 @@ body {
     margin-left: 60px !important;
     overflow: hidden;
     padding: 10px !important;
+    margin-top: 60px;
   }
   .header .avatar-text h3 {
     font-size: 13px !important;
@@ -670,7 +671,7 @@ body {
   }
   .special-table td {
     padding: 10px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .special-head {
     font-size: 18px;
@@ -958,7 +959,6 @@ select,
 .content .overview-second-box {
   display: grid;
   grid-template-columns: repeat(1, minmax(300px, 1fr));
-  /* grid-template-rows: repeat(1, minmax(300px, 1fr)); */
   grid-gap: 25px;
 }
 .content .overview-second-box > div {
@@ -1388,8 +1388,6 @@ select,
   margin-left: 300px;
   padding: 20px;
   color: var(--font-color);
-  /* max-height: 90vh;
-  overflow-y: auto; */
 }
 .success,
 .failed,
