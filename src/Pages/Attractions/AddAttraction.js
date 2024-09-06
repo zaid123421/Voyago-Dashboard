@@ -117,6 +117,15 @@ const showDestinations = destinations.map((destination, index) => {
               <select onChange = {handleSelect} className = "cursor-p fs-15">
                 <option>Select Destination</option>
                 {showDestinations}
+                <option>Damascus</option>
+                <option>Cairo</option>
+                <option>Madrid</option>
+                <option>Paris</option>
+                <option>Berlin</option>
+                <option>Rome</option>
+                <option>Cardiff</option>
+                <option>Zagreb</option>
+                <option>London</option>
               </select>
               <i className = "fa-solid fa-chevron-down arrow-select position-relative cursor-p"></i>
               </div>

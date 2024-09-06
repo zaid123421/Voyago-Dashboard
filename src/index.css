@@ -885,7 +885,35 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+  .event-box div input {
+    margin-left: 0 !important;
+    margin-top: 10px;
+    width: 100% !important;
+  }
+  .event-box select {
+    margin: 10px 0 0 0;
+    width: 185px !important;
+  }
+  .event-box div:nth-child(3) span {
+    margin-top: 10px;
+  }
+  .event-box div:nth-child(4) i,
+  .event-box div:nth-child(8) i {
+    top: 5px;
+    right: 30px;
+  }
+  .event-box div:nth-child(4) div,
+  .event-box div:nth-child(8) div {
+    margin: 0;
+  }
+  .event-box textarea {
+    width: 100% !important;
+    margin: 10px 0 0 0;
+  }
+  .trips-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    gap: 10px !important;
+  }
 }
 /* End Auth */
 
@@ -1811,20 +1839,6 @@ ul {
 }
 .add-day:hover {
   background-color: transparent;
-}
-.label-type{
-  display: inline-block;
-}
-.label-type::after {
-  content: '';
-  width: 7px;
-  height: 7px;
-  right: -175px;
-  top: 3px;
-  position: absolute;
-  border-bottom: 3px solid white;
-  border-right: 3px solid white;
-  transform: rotate(45deg);
 }
 .event-price-label {
   width: 130px;

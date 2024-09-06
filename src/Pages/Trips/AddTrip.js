@@ -616,6 +616,7 @@ function handleOpenImage() {
               </div>
               <div>
                 <label className = "label-type position-relative">Attraction:</label>
+                <div className = "d-flex align-c">
                 <select
                   className = "ml-15 cursor-p"
                   value={event.attraction_id || ""}
@@ -626,6 +627,8 @@ function handleOpenImage() {
                 </option>
                   {showAttrationsNames}
                 </select>
+                <i className = "fa-solid fa-chevron-down arrow-select position-relative cursor-p"></i>
+                </div>
               </div>
               <div>
                 <label>Start Date:</label>
@@ -655,6 +658,7 @@ function handleOpenImage() {
               </div>
               <div>
                 <label className = "label-type position-relative">Type:</label>
+                <div>
                 <select
                   className = "cursor-p ml-15 optional-select"
                   value = {event.type || ""}
@@ -666,26 +670,32 @@ function handleOpenImage() {
                   <option value="Optional">Optional</option>
                   <option value="Mandatory">Mandatory</option>
                 </select>
+                  <i className = "fa-solid fa-chevron-down arrow-select position-relative cursor-p"></i>
+                </div>
               </div>
               <div>
                 <label className = "event-price-label">Price of Adult:</label>
+                <div className="d-flex align-c">
                 <input
                   className = "input-price"
                   type = "number"
                   value = {event.price_adult || ''}
                   onChange = {(e) => handleEventChange(dayIndex, eventIndex, 'price_adult', e.target.value)}
                 />
-                <span className = "ml-10 dollar-sign">$</span>
+                <span className = "ml-10 dollar-sign fs-18">$</span>
+                </div>
               </div>
               <div>
                 <label className = "event-price-label">Price of Child:</label>
+                <div className = "d-flex align-c">
                 <input
                   className = "input-price"
                   type = "number"
                   value = {event.price_child || ''}
                   onChange = {(e) => handleEventChange(dayIndex, eventIndex, 'price_child', e.target.value)}
                 />
-                <span className = "ml-10 dollar-sign">$</span>
+                <span className = "ml-10 dollar-sign fs-18">$</span>
+                </div>
               </div>
               <div>
                 <label>Additional Notes:</label>
