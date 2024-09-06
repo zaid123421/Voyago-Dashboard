@@ -358,9 +358,9 @@ function handleOpenImage() {
       <div className = "content">
         <div className = "destination-details-header mb-15">
           <NavLink to = "/trips">
-            <i className="fa-solid fa-angle-left arrow-left"></i>
+            <i className="fa-solid fa-angle-left arrow-left transaction-arrow"></i>
           </NavLink>
-          <h1 className = "ml-20 special-head">Add Trip A New Trip</h1>
+          <h1 className = "special-head-arrow special-head">Add Trip A New Trip</h1>
         </div>
         <div className = "mt-25 main-add-trip-box">
           <p className = "fs-24">Add the trip's details</p>
@@ -371,7 +371,7 @@ function handleOpenImage() {
               className = "trip-name-input"
               value = {name}
               onChange = {(e) => setName(e.target.value)}
-              placeholder = "Add Trip's Title For, Example: Sunset"></input>
+              placeholder = "Example: Sunset"></input>
             </div>
             <div className = "mt-15">
               <label>Start Date</label>
@@ -388,9 +388,9 @@ function handleOpenImage() {
               type = "number"
               value = {price}
               onChange = {(e) => setPrice(e.target.value)}
-              placeholder = "Add Trip's Price, For Example: 350$"></input>
+              placeholder = "Example: 350$"></input>
             </div>
-            <div className = "mt-15">
+            <div className = "mt-15 capacity-div">
               <label>Capacity</label>
               <button onClick = {handleLeft} className = "bt mr-10">
                 <i className = "fa-solid fa-arrow-down"></i>
@@ -404,6 +404,7 @@ function handleOpenImage() {
             </div>
             <div className = "div-select mt-15 position-relative">
               <label htmlFor = "destination" className = "fw-500">Destination</label>
+              <div className="d-flex align-c">
               <select
                 onChange={handleSelectDestination}
                 className="cursor-p fs-15"
@@ -415,6 +416,7 @@ function handleOpenImage() {
                 {showDestinationsNames}
               </select>
               <i className = "fa-solid fa-chevron-down arrow-select position-relative cursor-p"></i>
+              </div>
             </div>
             <div className = "mt-15 main-description">
               <label>Description</label>
@@ -443,31 +445,99 @@ function handleOpenImage() {
               <div>
                 <span className = "position-relative fs-20">Meals:</span>
                 <ul>
-                  {showMealsFeatures}
+                  {/* {showMealsFeatures} */}
+                  <li className = "mb-10">
+                    <input checked type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Breakfast</label>
+                  </li>
+                  <li className = "mb-10">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Lunch</label>
+                  </li>
+                  <li className = "mb-10">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Dinner</label>
+                  </li>
+                  <li className = "mb-10">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Snacks</label>
+                  </li>
                 </ul>
               </div>
               <div>
                 <span className = "position-relative fs-20">Transporting</span>
                 <ul>
-                  {showTransportingFeatures}
+                  {/* {showTransportingFeatures} */}
+                  <li className = "mb-10">
+                    <input checked type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Transporting</label>
+                  </li>
+                  <li className = "mb-10">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Airport/Station Transfer</label>
+                  </li>
                 </ul>
               </div>
               <div>
                 <span className = "position-relative fs-20">Fees:</span>
                 <ul>
-                  {showFeesFeatures}
+                  {/* {showFeesFeatures} */}
+                  <li className = "mb-10">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Taxes And Fees</label>
+                  </li>
+                  <li className = "mb-10">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Free Transporting</label>
+                  </li>
+                  <li className = "mb-10">
+                    <input checked type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Entrance Fees to Attractions</label>
+                  </li>
                 </ul>
               </div>
               <div>
                 <span className = "position-relative fs-20">Services:</span>
                 <ul>
-                  {showServicesFeatures}
+                  {/* {showServicesFeatures} */}
+                  <li className = "mb-15">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Tour Guide</label>
+                  </li>
+                  <li className = "mb-15">
+                    <input checked type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Air Conditioning</label>
+                  </li>
+                  <li className = "mb-15">
+                    <input checked type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Free Wi-Fi</label>
+                  </li>
+                  <li className = "mb-15">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Luggage Storage</label>
+                  </li>
+                  <li className = "mb-15">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Travel Documentation Assisance</label>
+                  </li>
                 </ul>
               </div>
               <div>
                 <span className = "position-relative fs-20">Activities</span>
                 <ul>
-                  {showActivitiesFeatures}
+                  {/* {showActivitiesFeatures} */}
+                  <li className = "mb-15">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Activity Equipment</label>
+                  </li>
+                  <li className = "mb-15">
+                    <input checked type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Family Friendly Activities</label>
+                  </li>
+                  <li className = "mb-15">
+                    <input type = "checkbox" className = "checkbox-special"/>
+                    <label className = "checkbox-label cursor-p position-relative">Photo/Video Package</label>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -484,6 +554,7 @@ function handleOpenImage() {
             <div className = "special-box cancellation-box">
               <h3 className = "fw-600">Cancellation</h3>
               <p className = "ml-25 mt-5 position-relative">Up to
+                <div className="mt-15 mb-15">
                 <button onClick = {handleLeftHours} className = "bt ml-10">
                   <i className = "fa-solid fa-arrow-down"></i>
                 </button>
@@ -493,6 +564,7 @@ function handleOpenImage() {
                 <button onClick = {handleRightHours} className = "bt mr-10">
                   <i className ="fa-solid fa-arrow-up"></i>
                 </button>
+                </div>
                 hour(s) before the trip's start time.
               </p>
               <p className = "ml-25 mt-15 position-relative">
@@ -628,9 +700,9 @@ function handleOpenImage() {
           ))}
         </div>
       ))}
-      <div className = "mb-50 d-flex">
-      <button className = "add-trip-bt" onClick={handleAddDay}>Add Day</button>
+      <div className = "mb-50 d-flex buttons">
       <button onClick = {addTripDetails} className = "add-trip-bt">Save Trip Details</button>
+      <button className = "add-trip-bt" onClick={handleAddDay}>Add Day</button>
       </div>
     </div>
       <button

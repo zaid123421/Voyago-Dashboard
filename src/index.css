@@ -339,6 +339,9 @@ body {
 .ml-20 {
   margin-left: 20px;
 }
+.ml-35 {
+  margin-left: 35px;
+}
 .ml-25 {
   margin-left: 25px;
 }
@@ -422,7 +425,6 @@ body {
 .add-card input::placeholder {
   font-size: 16px;
 }
-
 .auth-card {
   display: flex;
   color: var(--font-color);
@@ -479,7 +481,6 @@ body {
   margin-top: 20px;
   width: fit-content;
 }
-
 .auth-card .first-child a:hover {
   color: #a04df6;
 }
@@ -518,6 +519,9 @@ body {
   }
   .attraction-arrow {
     top: 102px;
+  }
+  .transaction-arrow {
+    top: 105px;
   }
 }
 @media(max-width: 1024px){
@@ -613,8 +617,33 @@ body {
   .attraction-arrow {
     top: 103px;
   }
+  .transaction-arrow {
+    top: 103px;
+  }
+  .main-add-trip-box {
+    display: block !important;
+  }
+  .main-add-trip-box p:first-child{
+    grid-column: span 1 !important;
+  }
+  .main-add-trip-box > * {
+    margin-bottom: 20px !important;
+  }
+  .main-add-trip-box > .special-box > div textarea {
+    min-height: 125px !important;
+  }
+  .buttons .add-trip-bt:first-of-type {
+    margin-right: 10px;
+  }
+  .event-box div input {
+    flex: 1;
+  }
+  .main-add-trip-box > .special-box > div label {
+    width: 200px !important;
+    text-wrap: wrap !important;
+  }
 }
-@media(max-width: 550px){
+@media(max-width: 600px){
   .auth-card {
     justify-content: flex-end;
   }
@@ -660,7 +689,7 @@ body {
     margin-top: 60px !important;
   }
   .header .avatar-text h3 {
-    font-size: 13px !important;
+    font-size: 14px !important;
   }
   .header .avatar-text h4 {
     font-size: 12px !important;
@@ -783,7 +812,7 @@ body {
     margin-bottom: 10px;
   }
   .add-destination-details {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
   }
   .upload-icon {
     font-size: 65px !important;
@@ -794,6 +823,69 @@ body {
   .cards-input {
     height: 150px !important;
   }
+  .special-head-arrow{
+    margin-left: 25px !important;
+  }
+  .main-add-trip-box p {
+    font-size: 14px;
+  }
+  .main-add-trip-box {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+  }
+  .main-add-trip-box > .special-box {
+    padding: 20px !important;
+  }
+  .buttons {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  .buttons button:first-child {
+    margin-bottom: 10px;
+  }
+  .add-trip-bt {
+    width: 100% !important;
+  }
+  .features-box span {
+    margin-left: 10px;
+  }
+  .trip-name-input {
+    width: 100% !important;
+    margin-top: 10px;
+  }
+  .main-add-trip-box > .add-trip-box > div:not(:nth-child(4)) {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .add-trip-box .div-select label,
+  .add-trip-box .main-description label {
+    margin-bottom: 10px;
+  }
+  .main-add-trip-box > .special-box > div.cards-input {
+    align-items: center !important;
+  }
+  .features-box div {
+    display: block !important;
+  }
+  .features-box div span {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .day-box {
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important;
+}
+  .day-box > button {
+    margin-left: 0px !important;
+  }
+  .day-box .event-box {
+    padding: 10px !important;
+    width: 100% !important;
+  }
+  .day-box .event-box > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
 }
 /* End Auth */
 
@@ -865,6 +957,11 @@ body {
 .special-head{
   font-weight: 600;
   letter-spacing: 0.5px;
+}
+.special-head-arrow {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-left: 35px;
 }
 .admin-details-page {
   height: 100%;
@@ -1268,7 +1365,7 @@ select,
   font-weight: 600;
 }
 .main-add-trip-box .cards-input {
-  height: 320px !important;
+  height: 320px;
   background-color: var(--login-input-color);
 }
 .cards-input {
@@ -1376,6 +1473,7 @@ select,
   flex: 1;
   min-height: 100%;
   padding: 15px;
+  width: 100%;
 }
 .main-add-trip-box > .special-box > div textarea:focus {
   border: 2px solid rgba(167, 109, 242, 1);
@@ -1601,7 +1699,7 @@ ul {
   grid-column: span 2;
 }
 .day-box {
-  margin: 25px;
+  margin: 25px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 20px;

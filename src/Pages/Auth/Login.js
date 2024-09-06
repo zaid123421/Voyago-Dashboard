@@ -95,7 +95,7 @@ export default function Login() {
           <NavLink className = "mt-15 fs-14" to = "/forgotpassword">Forgot Password ?</NavLink>
         </div>
         <button onClick = {Submit} className = 'special-button'>Sign in</button>
-        <button onClick = {withoutLogin} className = 'special-button'>Couninue as Viewer</button>
+        <button onClick = {withoutLogin} className = 'special-button'>Couninue as Guest</button>
       </div>
       <div className = 'second-child'>
         <div className = 'login-text'>

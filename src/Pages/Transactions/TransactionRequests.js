@@ -78,9 +78,9 @@ export default function TransactionRequests() {
       <div className="content nav-item-content">
         <div className="d-flex align-c">
           <NavLink to="/transactions">
-            <i className="fa-solid fa-angle-left arrow-left position-absolute transacion-arrow"></i>
+            <i className="fa-solid fa-angle-left arrow-left position-absolute transaction-arrow"></i>
           </NavLink>
-          <h1 className="special-head ml-25">Transactions Requests</h1>
+          <h1 className="special-head-arrow special-head">Transactions Requests</h1>
         </div>
         <div className = "table-container">
           <table className="special-table transaction-table">
@@ -97,7 +97,7 @@ export default function TransactionRequests() {
             <tbody>
               {/* {showRequests} */}
               <tr>
-                <td>3</td>
+                <td>01</td>
                 <td>Mona</td>
                 <td>1500</td>
                 <td>
@@ -112,7 +112,7 @@ export default function TransactionRequests() {
                 </td>
               </tr>
               <tr>
-                <td>1</td>
+                <td>02</td>
                 <td>Mohanad</td>
                 <td>2000</td>
                 <td>
@@ -127,9 +127,69 @@ export default function TransactionRequests() {
                 </td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>03</td>
                 <td>Ramy</td>
                 <td>3500</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>18/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>04</td>
+                <td>Dyaa</td>
+                <td>1500</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>18/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>05</td>
+                <td>Reham</td>
+                <td>1750</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>18/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>06</td>
+                <td>Shayma</td>
+                <td>5500</td>
+                <td>
+                  <i className = "fa-solid fa-eye table-icon"></i>
+                </td>
+                <td>18/8/2024</td>
+                <td className="only-this">
+                  <div className="d-flex justify-sb">
+                    <span>Accept</span>
+                    <span>Refuse</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>07</td>
+                <td>Ghazal</td>
+                <td>500</td>
                 <td>
                   <i className = "fa-solid fa-eye table-icon"></i>
                 </td>

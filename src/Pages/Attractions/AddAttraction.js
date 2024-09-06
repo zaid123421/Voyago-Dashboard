@@ -95,7 +95,7 @@ const showDestinations = destinations.map((destination, index) => {
         <NavLink to = "/attractions">
           <i className="fa-solid fa-angle-left arrow-left attraction-arrow"></i>
         </NavLink>
-        <h1 className = "special-head fw-500 ml-25">Add A New Attraction</h1>
+        <h1 className = "special-head-arrow special-head fw-500">Add A New Attraction</h1>
         <p className = "ml-25 mt-20 fs-18">add the attraction's details:</p>
         <div className = "add-destination-details">
           <div>

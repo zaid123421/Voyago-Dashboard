@@ -76,7 +76,7 @@ async function Submit(e){
         <NavLink to = "/destinations">
           <i className="fa-solid fa-angle-left arrow-left destination-arrow"></i>
         </NavLink>
-        <h1 className = "fw-500 ml-25 special-head">Add A New Destination</h1>
+        <h1 className = "fw-500 special-head-arrow special-head">Add A New Destination</h1>
         <p className = "ml-25 mt-20 fs-18">add the destination's details:</p>
         <div className = "add-destination-details">
           <div>

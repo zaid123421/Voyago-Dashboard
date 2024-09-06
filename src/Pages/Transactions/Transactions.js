@@ -74,7 +74,7 @@ export default function ShowAllTransactions() {
             <tbody>
               {/* {showTrans} */}
               <tr>
-                <td>1</td>
+                <td>01</td>
                 <td>Ahmad Mohsen</td>
                 <td>Mona</td>
                 <td>#65</td>
@@ -83,7 +83,7 @@ export default function ShowAllTransactions() {
                 <td>18/8/2024</td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>02</td>
                 <td>Samer Tr</td>
                 <td>Hamza</td>
                 <td>#66</td>
@@ -92,7 +92,7 @@ export default function ShowAllTransactions() {
                 <td>18/8/2024</td>
               </tr>
               <tr>
-                <td>3</td>
+                <td>03</td>
                 <td>Ahmad Mohsen</td>
                 <td>Loujain</td>
                 <td>#67</td>
@@ -101,7 +101,7 @@ export default function ShowAllTransactions() {
                 <td>18/8/2024</td>
               </tr>
               <tr>
-                <td>4</td>
+                <td>04</td>
                 <td>-</td>
                 <td>Mona</td>
                 <td>#68</td>
@@ -110,7 +110,7 @@ export default function ShowAllTransactions() {
                 <td>18/8/2024</td>
               </tr>
               <tr>
-                <td>5</td>
+                <td>05</td>
                 <td>-</td>
                 <td>Mohanad</td>
                 <td>#69</td>
@@ -119,7 +119,7 @@ export default function ShowAllTransactions() {
                 <td>18/8/2024</td>
               </tr>
               <tr>
-                <td>6</td>
+                <td>06</td>
                 <td>-</td>
                 <td>Ramy</td>
                 <td>#70</td>

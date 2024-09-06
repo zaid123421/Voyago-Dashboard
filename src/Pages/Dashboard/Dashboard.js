@@ -133,8 +133,7 @@ export default function Dashboard() {
         <h4 className = "mb-20">Total Users</h4>
         <div className = "overview-box-content">
           <h2>
-            {totalUsers}
-            {/* 24530 */}
+            {totalUsers ? totalUsers : 11245}
           </h2>
           <i className = "fa-solid fa-users"></i>
         </div>
@@ -143,8 +142,7 @@ export default function Dashboard() {
         <h4 className = "mb-20">Total Bookings</h4>
         <div className = "overview-box-content">
           <h2>
-            {totalBookings}
-            {/* 31753 */}
+            {totalBookings ? totalBookings : 7349}
           </h2>
           <i className = "fa-solid fa-money-check"></i>
         </div>
@@ -153,8 +151,7 @@ export default function Dashboard() {
         <h4 className = "mb-20">Today's New Users</h4>
         <div className = "overview-box-content">
           <h2>
-            {todayUsers}
-            {/* 552 */}
+            {todayUsers ? todayUsers : 175}
           </h2>
           <i className = "fa-solid fa-user-plus"></i>
         </div>
@@ -163,8 +160,7 @@ export default function Dashboard() {
         <h4 className = "mb-20">Today's New Bookings</h4>
         <div className = "overview-box-content">
           <h2>
-            {todayBookings}
-            {/* 954 */}
+            {todayBookings ? todayBookings : 234}
           </h2>
           <i className = "fa-solid fa-money-check"></i>
         </div>
@@ -173,7 +169,7 @@ export default function Dashboard() {
         <div className = "overview-second-box mt-25">
           <div className = "overview-content-5">
             <BarChart chartData = {statictics} />
-          </div>
+          </div>  
         </div>
         <div className = "overview-third-box mt-25">
         <div className = "overview-content-7">

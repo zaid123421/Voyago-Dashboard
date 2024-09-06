@@ -54,24 +54,24 @@ async function deleteUser (id) {
             </tr>
           </thead>
           <tbody>
-            {showAdmins}
+            {/* {showAdmins} */}
             <tr>
               <td>01</td>
               <td>Zaid</td>
-              <td>Accounant</td>
+              <td>Super Admin</td>
               <td><Link><i className = "fa-solid fa-eye table-icon"></i></Link></td>
               <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
             </tr>
             <tr>
-              <td>01</td>
-              <td>Zaid</td>
-              <td>Accounant</td>
+              <td>02</td>
+              <td>Moamen</td>
+              <td>Trips Organizer</td>
               <td><Link><i className = "fa-solid fa-eye table-icon"></i></Link></td>
               <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
             </tr>
             <tr>
-              <td>01</td>
-              <td>Zaid</td>
+              <td>03</td>
+              <td>Kamel</td>
               <td>Accounant</td>
               <td><Link><i className = "fa-solid fa-eye table-icon"></i></Link></td>
               <td><i className = "fa-regular fa-trash-can table-icon"></i></td>

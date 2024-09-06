@@ -15,12 +15,10 @@ export default function Header() {
         </div>
         <div className = 'avatar-text d-flex flex-d-c justify-c'>
           <h3 className = 'fw-600'>
-            {userInfo.auth.userName}
-            Zaid Alshamaa
+            {userInfo.auth.userName ? userInfo.auth.userName : 'Guest'}
           </h3>
           <h4 className = "fs-14 fw-500">
-            {userInfo.auth.userRole}
-            Super Admin
+            {userInfo.auth.userRole ? userInfo.auth.userRole : 'Viewer'}
           </h4>
         </div>
           <img alt = 'avatar' src = {avatar} />

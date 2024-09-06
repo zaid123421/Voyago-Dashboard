@@ -72,9 +72,9 @@ async function deleteReservation (id) {
               </tr>
             </thead>
             <tbody>
-              {showReservations}
+              {/* {showReservations} */}
               <tr>
-                <td>1</td>
+                <td>01</td>
                 <td>#12</td>
                 <td>Samer Mohammad</td>
                 <td>3 days in mountains</td>
@@ -82,7 +82,7 @@ async function deleteReservation (id) {
                 <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>02</td>
                 <td>#13</td>
                 <td>Ramez Mohsen</td>
                 <td>Casablanca</td>
@@ -90,7 +90,7 @@ async function deleteReservation (id) {
                 <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>03</td>
                 <td>#14</td>
                 <td>Ayman Alshamaa</td>
                 <td>Casablanca</td>
@@ -98,7 +98,7 @@ async function deleteReservation (id) {
                 <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>04</td>
                 <td>#15</td>
                 <td>Zaid Alshamaa</td>
                 <td>Madrid</td>
@@ -106,7 +106,7 @@ async function deleteReservation (id) {
                 <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>05</td>
                 <td>#16</td>
                 <td>Mohammad Alkhateb</td>
                 <td>World Cup</td>
@@ -114,7 +114,7 @@ async function deleteReservation (id) {
                 <td><i className = "fa-regular fa-trash-can table-icon"></i></td>
               </tr>
               <tr>
-                <td>2</td>
+                <td>06</td>
                 <td>#17</td>
                 <td>Monir Ahmad</td>
                 <td>Santiago Beranbue</td>
