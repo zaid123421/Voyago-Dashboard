@@ -18,7 +18,7 @@ export function TransactionsListPage() {
 
   return (
     <DashboardLayout activeNav={8} className="nav-item-content">
-      <div className="d-flex align-c">
+      <div className="d-flex align-c transactions-header">
         <PageHeader title="Transactions" />
         <NavLink className="deposit" to="/transactionrequests">Transactions Requests</NavLink>
       </div>

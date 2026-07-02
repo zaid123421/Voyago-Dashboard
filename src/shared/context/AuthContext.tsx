@@ -6,50 +6,85 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import Cookies from 'universal-cookie';
-import type { AuthState, AdminRole } from '@/shared/types';
+import type { AuthState } from '@/shared/types';
+import {
+  authCookies,
+  clearAuthCookies,
+  isFullyAuthenticated,
+  readAuthFromCookies,
+  setTwoFactorVerified,
+} from '@/shared/utils/auth';
 
-const cookies = new Cookies();
+const PENDING_AUTH_KEY = 'pendingAuth';
 
 interface AuthContextValue {
   auth: AuthState;
   setAuth: (auth: AuthState) => void;
   login: (auth: AuthState) => void;
+  loginPending: (auth: AuthState) => void;
+  completePendingLogin: () => boolean;
+  hasPendingAuth: () => boolean;
   logout: () => void;
   isAuthenticated: boolean;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-function readAuthFromCookies(): AuthState {
-  return {
-    userAccessToken: cookies.get('userAccessToken'),
-    userRefreshToken: cookies.get('userRefreshToken'),
-    userName: cookies.get('userName'),
-    userRole: cookies.get('userRole') as AdminRole | undefined,
-  };
+function sanitizeStoredAuth(): AuthState {
+  const stored = readAuthFromCookies();
+  if (stored.userAccessToken && stored.userRole === 'Super Admin' && !isFullyAuthenticated(stored)) {
+    clearAuthCookies();
+    return {};
+  }
+  return stored;
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [auth, setAuthState] = useState<AuthState>(readAuthFromCookies);
+  const [auth, setAuthState] = useState<AuthState>(sanitizeStoredAuth);
 
   const setAuth = useCallback((newAuth: AuthState) => {
     setAuthState(newAuth);
-    if (newAuth.userAccessToken) cookies.set('userAccessToken', newAuth.userAccessToken, { path: '/' });
-    if (newAuth.userRefreshToken) cookies.set('userRefreshToken', newAuth.userRefreshToken, { path: '/' });
-    if (newAuth.userName) cookies.set('userName', newAuth.userName, { path: '/' });
-    if (newAuth.userRole) cookies.set('userRole', newAuth.userRole, { path: '/' });
+    if (newAuth.userAccessToken) authCookies.set('userAccessToken', newAuth.userAccessToken, { path: '/' });
+    if (newAuth.userRefreshToken) authCookies.set('userRefreshToken', newAuth.userRefreshToken, { path: '/' });
+    if (newAuth.userName) authCookies.set('userName', newAuth.userName, { path: '/' });
+    if (newAuth.userRole) authCookies.set('userRole', newAuth.userRole, { path: '/' });
   }, []);
 
   const login = useCallback((newAuth: AuthState) => {
+    if (newAuth.userRole !== 'Super Admin') {
+      authCookies.remove('twoFactorVerified', { path: '/' });
+    }
     setAuth(newAuth);
   }, [setAuth]);
 
+  const loginPending = useCallback((newAuth: AuthState) => {
+    clearAuthCookies();
+    setAuthState({});
+    sessionStorage.setItem(PENDING_AUTH_KEY, JSON.stringify(newAuth));
+  }, []);
+
+  const hasPendingAuth = useCallback(() => {
+    return Boolean(sessionStorage.getItem(PENDING_AUTH_KEY));
+  }, []);
+
+  const completePendingLogin = useCallback(() => {
+    const raw = sessionStorage.getItem(PENDING_AUTH_KEY);
+    if (!raw) return false;
+    try {
+      const pending = JSON.parse(raw) as AuthState;
+      sessionStorage.removeItem(PENDING_AUTH_KEY);
+      setTwoFactorVerified();
+      setAuth(pending);
+      return true;
+    } catch {
+      sessionStorage.removeItem(PENDING_AUTH_KEY);
+      return false;
+    }
+  }, [setAuth]);
+
   const logout = useCallback(() => {
-    cookies.remove('userAccessToken', { path: '/' });
-    cookies.remove('userRefreshToken', { path: '/' });
-    cookies.remove('userName', { path: '/' });
-    cookies.remove('userRole', { path: '/' });
+    clearAuthCookies();
+    sessionStorage.removeItem(PENDING_AUTH_KEY);
     setAuthState({});
   }, []);
 
@@ -58,10 +93,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       auth,
       setAuth,
       login,
+      loginPending,
+      completePendingLogin,
+      hasPendingAuth,
       logout,
-      isAuthenticated: Boolean(auth.userAccessToken),
+      isAuthenticated: isFullyAuthenticated(auth),
     }),
-    [auth, setAuth, login, logout],
+    [auth, setAuth, login, loginPending, completePendingLogin, hasPendingAuth, logout],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

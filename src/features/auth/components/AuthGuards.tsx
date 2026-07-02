@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '@/shared/context/AuthContext';
-import { cookies } from '@/api/client';
+import { authCookies, isTwoFactorVerified } from '@/shared/utils/auth';
 
 export function RequireAuth() {
   const { isAuthenticated } = useAuth();
@@ -11,12 +11,12 @@ export function RequireAuth() {
 }
 
 export function PersistLogin() {
-  const { auth, login } = useAuth();
+  const { auth, login, loginPending } = useAuth();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function refresh() {
-      const refreshToken = cookies.get('userRefreshToken') as string | undefined;
+      const refreshToken = authCookies.get('userRefreshToken') as string | undefined;
       if (!refreshToken) {
         setLoading(false);
         return;
@@ -29,20 +29,29 @@ export function PersistLogin() {
         const { data } = await axios.post('/web/token', {
           refresh_token: refreshToken,
         });
-        login({
+        const nextAuth = {
           userAccessToken: data.accessToken,
           userRefreshToken: data.refreshToken,
           userName: data.name,
           userRole: data.role,
-        });
+        };
+        if (data.role === 'Super Admin' && !isTwoFactorVerified()) {
+          loginPending(nextAuth);
+        } else {
+          login(nextAuth);
+        }
       } catch {
-        cookies.remove('userRefreshToken', { path: '/' });
+        authCookies.remove('userRefreshToken', { path: '/' });
+        authCookies.remove('userAccessToken', { path: '/' });
+        authCookies.remove('userName', { path: '/' });
+        authCookies.remove('userRole', { path: '/' });
+        authCookies.remove('twoFactorVerified', { path: '/' });
       } finally {
         setLoading(false);
       }
     }
     refresh();
-  }, [auth.userAccessToken, login]);
+  }, [auth.userAccessToken, login, loginPending]);
 
   if (loading) {
     return (
@@ -56,7 +65,21 @@ export function PersistLogin() {
 }
 
 export function GuestOnly({ children }: { children: ReactNode }) {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, hasPendingAuth } = useAuth();
   if (isAuthenticated) return <Navigate to="/dashboard" replace />;
+  if (hasPendingAuth()) return <Navigate to="/superadmincode" replace />;
+  return <>{children}</>;
+}
+
+export function RequireSuperAdmin2FA({ children }: { children: ReactNode }) {
+  const { isAuthenticated, hasPendingAuth } = useAuth();
+  if (isAuthenticated) return <Navigate to="/dashboard" replace />;
+  if (!hasPendingAuth()) return <Navigate to="/" replace />;
+  return <>{children}</>;
+}
+
+export function RequireResetEmail({ children }: { children: ReactNode }) {
+  const email = sessionStorage.getItem('resetEmail');
+  if (!email) return <Navigate to="/forgotpassword" replace />;
   return <>{children}</>;
 }

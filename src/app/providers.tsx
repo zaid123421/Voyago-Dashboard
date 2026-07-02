@@ -8,7 +8,8 @@ import { EmailProvider } from '@/shared/context/EmailContext';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 30_000,
+      staleTime: 60_000,
+      gcTime: 5 * 60_000,
       retry: 1,
       refetchOnWindowFocus: false,
     },
@@ -25,9 +26,12 @@ export function AppProviders({ children }: { children: ReactNode }) {
             <Toaster
               position="top-right"
               toastOptions={{
+                duration: 3000,
                 style: {
-                  background: '#282828',
-                  color: '#fff',
+                  background: 'var(--cards-color)',
+                  color: 'var(--font-color)',
+                  border: '1px solid rgba(160, 77, 246, 0.35)',
+                  borderRadius: '12px',
                 },
               }}
             />
@@ -39,15 +43,21 @@ export function AppProviders({ children }: { children: ReactNode }) {
 }
 
 export function MswLoader({ children }: { children: ReactNode }) {
-  const [ready, setReady] = useState(import.meta.env.MODE === 'test');
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    let active = true;
+
     async function enableMsw() {
       const { worker } = await import('@/mocks/browser');
-      await worker.start({ onUnhandledRequest: 'bypass' });
-      setReady(true);
+      await worker.start({ onUnhandledRequest: 'bypass', quiet: true });
+      if (active) setReady(true);
     }
+
     enableMsw();
+    return () => {
+      active = false;
+    };
   }, []);
 
   if (!ready) {

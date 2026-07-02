@@ -6,7 +6,7 @@ import { useAuth } from '@/shared/context/AuthContext';
 import { useEmail } from '@/shared/context/EmailContext';
 import { ApiError } from '@/api/errors';
 
-const LOGO_URL = 'https://api.dicebear.com/7.x/shapes/svg?seed=voyago';
+import { logoLogin } from '@/shared/assets/images';
 
 export function LoginPage() {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ export function LoginPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, loginPending } = useAuth();
   const { setEmail: setResetEmail } = useEmail();
   const navigate = useNavigate();
 
@@ -27,16 +27,22 @@ export function LoginPage() {
     setLoading(true);
     try {
       const { data } = await authApi.login(email, password);
-      login({
-        userAccessToken: data.accessToken,
-        userRefreshToken: data.refreshToken,
-        userName: data.name,
-        userRole: data.role,
-      });
       setResetEmail(email);
       if (data.role === 'Super Admin') {
+        loginPending({
+          userAccessToken: data.accessToken,
+          userRefreshToken: data.refreshToken,
+          userName: data.name,
+          userRole: data.role,
+        });
         navigate('/superadmincode');
       } else {
+        login({
+          userAccessToken: data.accessToken,
+          userRefreshToken: data.refreshToken,
+          userName: data.name,
+          userRole: data.role,
+        });
         toast.success(`Welcome back, ${data.name}!`);
         navigate('/dashboard');
       }
@@ -83,7 +89,7 @@ export function LoginPage() {
             />
             {password.length < 8 && submitted && (
               <p className="error fs-14 position-absolute color-red">
-                Password Must Be More Than 8 Characters
+                Password must be at least 8 characters
               </p>
             )}
           </div>
@@ -103,7 +109,7 @@ export function LoginPage() {
           <h1>Welcome To Voyago Dashboard !</h1>
           <p className="fs-18 fw-500 mt-15">Sign in to Access Admin Dashboard</p>
         </div>
-        <img className="logo" src={LOGO_URL} alt="Logo" />
+        <img className="logo" src={logoLogin} alt="Logo" />
       </div>
     </div>
   );

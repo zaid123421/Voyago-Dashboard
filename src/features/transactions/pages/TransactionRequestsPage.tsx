@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { transactionsApi } from '@/api/endpoints';
 import { DashboardLayout } from '@/shared/layouts/DashboardLayout';
 import { LoadingSpinner, ErrorState, EmptyState } from '@/shared/components/Feedback';
+import { ImagePreviewModal } from '@/shared/components/Modal';
 import { formatDate, formatRowIndex } from '@/shared/utils';
 import type { ChargeRequest } from '@/shared/types';
 
@@ -90,14 +91,12 @@ export function TransactionRequestsPage() {
           </table>
         </div>
       )}
-      {selectedImage && (
-        <div className="modal" onClick={() => setSelectedImage(null)} role="presentation">
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={() => setSelectedImage(null)}>&times;</span>
-            <img src={selectedImage} alt="Bank Ticket" />
-          </div>
-        </div>
-      )}
+      <ImagePreviewModal
+        open={Boolean(selectedImage)}
+        src={selectedImage}
+        alt="Bank receipt"
+        onClose={() => setSelectedImage(null)}
+      />
     </DashboardLayout>
   );
 }

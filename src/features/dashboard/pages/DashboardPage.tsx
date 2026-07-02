@@ -1,10 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { Bar } from 'react-chartjs-2';
-import 'chart.js/auto';
 import { DashboardLayout } from '@/shared/layouts/DashboardLayout';
 import { dashboardApi, visitorStats } from '@/api/endpoints';
 import { LoadingSpinner, ErrorState } from '@/shared/components/Feedback';
 import { renderStars } from '@/shared/utils';
+import { DashboardChart } from '@/features/dashboard/components/VisitorsChart';
 
 export function DashboardPage() {
   const overview = useQuery({
@@ -19,19 +18,6 @@ export function DashboardPage() {
     queryKey: ['dashboard', 'top-destinations'],
     queryFn: async () => (await dashboardApi.getTopDestinations()).data.data.result,
   });
-
-  const chartData = {
-    labels: visitorStats.map((d) => d.Month),
-    datasets: [
-      {
-        label: 'Visitors Analytics',
-        data: visitorStats.map((d) => d.Visitors),
-        backgroundColor: ['rgba(140, 65, 239, 1)'],
-        barThickness: 20,
-        borderRadius: 10,
-      },
-    ],
-  };
 
   if (overview.isLoading) {
     return (
@@ -85,7 +71,7 @@ export function DashboardPage() {
       </div>
       <div className="overview-second-box mt-25">
         <div className="overview-content-5">
-          <Bar data={chartData} options={{ responsive: true, plugins: { legend: { display: false } } }} />
+          <DashboardChart data={visitorStats} />
         </div>
       </div>
       <div className="overview-third-box mt-25">

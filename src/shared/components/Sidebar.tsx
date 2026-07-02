@@ -3,6 +3,12 @@ import { useAuth } from '@/shared/context/AuthContext';
 import { useTheme } from '@/shared/context/ThemeContext';
 import { authApi } from '@/api/endpoints';
 import toast from 'react-hot-toast';
+import {
+  dashboardLogo,
+  darkLogo,
+  smallDarkLogo,
+  smallWhiteLogo,
+} from '@/shared/assets/images';
 
 const NAV_ITEMS = [
   { to: '/dashboard', icon: 'fa-chart-simple', label: 'Dashboard', num: 1 },
@@ -41,7 +47,17 @@ export function Sidebar({ activeNav }: SidebarProps) {
   return (
     <div className="sidebar">
       <div className="logo-text mb-20 d-flex justify-c">
-        <span className={`logo-wordmark ${theme}`}>Voyago</span>
+        {theme === 'dark' ? (
+          <>
+            <img className="lightlogo" alt="Voyago" src={dashboardLogo} />
+            <img className="smalllightlogo" alt="Voyago" src={smallWhiteLogo} />
+          </>
+        ) : (
+          <>
+            <img className="darklogo" alt="Voyago" src={darkLogo} />
+            <img className="smalldarklogo" alt="Voyago" src={smallDarkLogo} />
+          </>
+        )}
       </div>
       <div className="nav-links d-flex flex-d-c">
         {NAV_ITEMS.map((item) => (

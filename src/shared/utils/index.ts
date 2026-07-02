@@ -40,5 +40,4 @@ export const DEMO_CREDENTIALS = {
   admin: { email: 'manager@voyago.com', password: 'manager123' },
 } as const;
 
-export const PLACEHOLDER_IMAGE = (id: number) =>
-  `https://picsum.photos/seed/voyago${id}/600/400`;
+export { uploadImg as DEFAULT_UPLOAD_IMAGE } from '@/shared/assets/images';

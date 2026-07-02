@@ -1,6 +1,7 @@
 import { http, HttpResponse, delay } from 'msw';
 import { db } from '../db';
 import { generateId, isToday } from '@/shared/utils';
+import { uploadImg } from '@/shared/assets/images';
 import type { LoginResponse } from '@/shared/types';
 
 const API = '/web';
@@ -260,7 +261,7 @@ export const tripHandlers = [
       start_date: String(body.start_date ?? new Date().toISOString().slice(0, 10)),
       end_date: String(body.end_date ?? new Date().toISOString().slice(0, 10)),
       trip_price: Number(body.trip_price ?? 500),
-      images: [{ url: `https://picsum.photos/seed/trip${Date.now()}/600/400` }],
+      images: [{ url: uploadImg }],
       createdAt: new Date().toISOString(),
     };
     db.trips.push(trip);
@@ -294,7 +295,7 @@ export const attractionHandlers = [
       name: body.name,
       destinationId: body.destination_id,
       rate: body.rate ?? 4.5,
-      Images: [{ url: `https://picsum.photos/seed/attr${Date.now()}/600/400` }],
+      Images: [{ url: uploadImg }],
       createdAt: new Date().toISOString(),
     };
     db.attractions.push(attraction);
@@ -310,7 +311,7 @@ export const destinationHandlers = [
       id: generateId(db.destinations),
       name: body.name,
       rate: body.rate ?? 4.5,
-      Images: [{ url: `https://picsum.photos/seed/dest${Date.now()}/600/400` }],
+      Images: [{ url: uploadImg }],
       createdAt: new Date().toISOString(),
     };
     db.destinations.push(destination);

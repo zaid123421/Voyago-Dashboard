@@ -1,7 +1,6 @@
 import { useAuth } from '@/shared/context/AuthContext';
 import { DarkModeToggle } from './DarkModeToggle';
-
-const AVATAR_URL = 'https://api.dicebear.com/7.x/avataaars/svg?seed=voyago';
+import { avatar } from '@/shared/assets/images';
 
 export function Header() {
   const { auth } = useAuth();
@@ -16,7 +15,7 @@ export function Header() {
           <h3 className="fw-600">{auth.userName ?? 'Admin'}</h3>
           <h4 className="fs-14 fw-500">{auth.userRole ?? 'Viewer'}</h4>
         </div>
-        <img alt="avatar" src={AVATAR_URL} className="header-avatar" />
+        <img alt="avatar" src={avatar} className="header-avatar" />
       </div>
     </div>
   );

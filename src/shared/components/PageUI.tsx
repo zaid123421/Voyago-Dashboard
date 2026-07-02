@@ -1,41 +1,6 @@
 import { useState, type ReactNode } from 'react';
-
-interface ConfirmDialogProps {
-  open: boolean;
-  title: string;
-  message: string;
-  onConfirm: () => void;
-  onCancel: () => void;
-  confirmLabel?: string;
-}
-
-export function ConfirmDialog({
-  open,
-  title,
-  message,
-  onConfirm,
-  onCancel,
-  confirmLabel = 'Delete',
-}: ConfirmDialogProps) {
-  if (!open) return null;
-
-  return (
-    <div className="modal" onClick={onCancel} role="presentation">
-      <div className="modal-content confirm-dialog" onClick={(e) => e.stopPropagation()}>
-        <h3 className="mb-15">{title}</h3>
-        <p className="mb-25 fs-14">{message}</p>
-        <div className="d-flex justify-sb gap-15">
-          <button type="button" className="cancel-button" onClick={onCancel}>
-            Cancel
-          </button>
-          <button type="button" className="confirm-delete-button" onClick={onConfirm}>
-            {confirmLabel}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { NavLink } from 'react-router-dom';
+import { ConfirmModal } from './Modal';
 
 export function useConfirmDialog() {
   const [state, setState] = useState<{
@@ -56,7 +21,7 @@ export function useConfirmDialog() {
     });
 
   const dialog = (
-    <ConfirmDialog
+    <ConfirmModal
       open={state.open}
       title={state.title}
       message={state.message}
@@ -104,8 +69,6 @@ export function PageHeader({ title, search, onSearchChange, action }: PageHeader
     </div>
   );
 }
-
-import { NavLink } from 'react-router-dom';
 
 export function FloatingAddLink({ to }: { to: string }) {
   return (

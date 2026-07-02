@@ -12,7 +12,24 @@ import type {
   VisitorStat,
   AuthUser,
 } from '@/shared/types';
-import { PLACEHOLDER_IMAGE } from '@/shared/utils';
+import {
+  barcelona,
+  cairo,
+  damascus,
+  dubai,
+  dubrovnik,
+  berlin,
+  madrid,
+  maldiv,
+  palaceWestminster,
+  paris,
+  palmyra,
+  rome,
+  salahCastle,
+  santiago,
+  umayyadSquare,
+  uploadImg,
+} from '@/shared/assets/images';
 
 const now = new Date().toISOString();
 const today = now.slice(0, 10);
@@ -52,23 +69,25 @@ export const users: User[] = [
 ];
 
 export const destinations: Destination[] = [
-  { id: 1, name: 'Madrid', rate: 4.9, Images: [{ url: PLACEHOLDER_IMAGE(1) }], createdAt: now },
-  { id: 2, name: 'Dubai', rate: 4.8, Images: [{ url: PLACEHOLDER_IMAGE(2) }], createdAt: now },
-  { id: 3, name: 'Damascus', rate: 4.8, Images: [{ url: PLACEHOLDER_IMAGE(3) }], createdAt: now },
-  { id: 4, name: 'Barcelona', rate: 4.7, Images: [{ url: PLACEHOLDER_IMAGE(4) }], createdAt: now },
-  { id: 5, name: 'Paris', rate: 4.6, Images: [{ url: PLACEHOLDER_IMAGE(5) }], createdAt: now },
-  { id: 6, name: 'Cairo', rate: 4.5, Images: [{ url: PLACEHOLDER_IMAGE(6) }], createdAt: now },
-  { id: 7, name: 'London', rate: 4.4, Images: [{ url: PLACEHOLDER_IMAGE(7) }], createdAt: now },
-  { id: 8, name: 'Rome', rate: 4.3, Images: [{ url: PLACEHOLDER_IMAGE(8) }], createdAt: now },
+  { id: 1, name: 'Madrid', rate: 4.9, Images: [{ url: madrid }], createdAt: now },
+  { id: 2, name: 'Dubai', rate: 4.8, Images: [{ url: dubai }], createdAt: now },
+  { id: 3, name: 'Damascus', rate: 4.8, Images: [{ url: damascus }], createdAt: now },
+  { id: 4, name: 'Barcelona', rate: 4.7, Images: [{ url: barcelona }], createdAt: now },
+  { id: 5, name: 'Paris', rate: 4.6, Images: [{ url: paris }], createdAt: now },
+  { id: 6, name: 'Cairo', rate: 4.5, Images: [{ url: cairo }], createdAt: now },
+  { id: 7, name: 'London', rate: 4.4, Images: [{ url: berlin }], createdAt: now },
+  { id: 8, name: 'Rome', rate: 4.3, Images: [{ url: rome }], createdAt: now },
 ];
 
 export const attractions: Attraction[] = [
-  { id: 1, name: 'Umayyad Square', rate: 4.1, destinationId: 3, Images: [{ url: PLACEHOLDER_IMAGE(11) }], createdAt: now },
-  { id: 2, name: 'Santiago Bernabue', rate: 4.6, destinationId: 1, Images: [{ url: PLACEHOLDER_IMAGE(12) }], createdAt: now },
-  { id: 3, name: 'Salah al-Din Citadel', rate: 4.5, destinationId: 3, Images: [{ url: PLACEHOLDER_IMAGE(13) }], createdAt: now },
-  { id: 4, name: 'Burj Khalifa', rate: 4.9, destinationId: 2, Images: [{ url: PLACEHOLDER_IMAGE(14) }], createdAt: now },
-  { id: 5, name: 'Eiffel Tower', rate: 4.8, destinationId: 5, Images: [{ url: PLACEHOLDER_IMAGE(15) }], createdAt: now },
-  { id: 6, name: 'Sagrada Familia', rate: 4.7, destinationId: 4, Images: [{ url: PLACEHOLDER_IMAGE(16) }], createdAt: now },
+  { id: 1, name: 'Umayyad Square', rate: 4.1, destinationId: 3, Images: [{ url: umayyadSquare }], createdAt: now },
+  { id: 2, name: 'Santiago Bernabue', rate: 4.6, destinationId: 1, Images: [{ url: santiago }], createdAt: now },
+  { id: 3, name: 'Salah al-Din Citadel', rate: 4.5, destinationId: 3, Images: [{ url: salahCastle }], createdAt: now },
+  { id: 4, name: 'Burj Khalifa', rate: 4.9, destinationId: 2, Images: [{ url: dubai }], createdAt: now },
+  { id: 5, name: 'Eiffel Tower', rate: 4.8, destinationId: 5, Images: [{ url: paris }], createdAt: now },
+  { id: 6, name: 'Sagrada Familia', rate: 4.7, destinationId: 4, Images: [{ url: barcelona }], createdAt: now },
+  { id: 7, name: 'Palace of Westminster', rate: 4.6, destinationId: 7, Images: [{ url: palaceWestminster }], createdAt: now },
+  { id: 8, name: 'Dubrovnik Walls', rate: 4.8, destinationId: 8, Images: [{ url: dubrovnik }], createdAt: now },
 ];
 
 export const trips: Trip[] = [
@@ -76,37 +95,37 @@ export const trips: Trip[] = [
     id: 1, name: '3 Days in Maldiv', destinationId: 2, destinationName: 'Dubai',
     duration: 3, rate: 5, capacity: 2000, available_capacity: 232, avilable: 1,
     start_date: '2024-08-01', end_date: '2024-08-04', trip_price: 1200,
-    images: [{ url: PLACEHOLDER_IMAGE(21) }], createdAt: now,
+    images: [{ url: maldiv }], createdAt: now,
   },
   {
     id: 2, name: 'Mountains in Syria', destinationId: 3, destinationName: 'Damascus',
     duration: 5, rate: 4.8, capacity: 500, available_capacity: 175, avilable: 1,
     start_date: '2024-09-10', end_date: '2024-09-15', trip_price: 850,
-    images: [{ url: PLACEHOLDER_IMAGE(22) }], createdAt: now,
+    images: [{ url: palmyra }], createdAt: now,
   },
   {
     id: 3, name: 'Paris Life', destinationId: 5, destinationName: 'Paris',
     duration: 4, rate: 4.9, capacity: 800, available_capacity: 251, avilable: 1,
     start_date: '2024-10-01', end_date: '2024-10-05', trip_price: 1500,
-    images: [{ url: PLACEHOLDER_IMAGE(23) }], createdAt: now,
+    images: [{ url: paris }], createdAt: now,
   },
   {
     id: 4, name: 'Great Moments in Madrid', destinationId: 1, destinationName: 'Madrid',
     duration: 3, rate: 4.7, capacity: 600, available_capacity: 100, avilable: 1,
     start_date: '2024-11-01', end_date: '2024-11-04', trip_price: 990,
-    images: [{ url: PLACEHOLDER_IMAGE(24) }], createdAt: now,
+    images: [{ url: madrid }], createdAt: now,
   },
   {
     id: 5, name: 'Middle East Trip', destinationId: 6, destinationName: 'Cairo',
     duration: 6, rate: 4.5, capacity: 400, available_capacity: 277, avilable: 1,
     start_date: '2024-12-01', end_date: '2024-12-07', trip_price: 1100,
-    images: [{ url: PLACEHOLDER_IMAGE(25) }], createdAt: now,
+    images: [{ url: cairo }], createdAt: now,
   },
   {
     id: 6, name: 'Barcelona Beach', destinationId: 4, destinationName: 'Barcelona',
     duration: 4, rate: 4.6, capacity: 350, available_capacity: 50, avilable: 1,
     start_date: '2024-07-15', end_date: '2024-07-19', trip_price: 1050,
-    images: [{ url: PLACEHOLDER_IMAGE(26) }], createdAt: now,
+    images: [{ url: barcelona }], createdAt: now,
   },
 ];
 
@@ -130,10 +149,10 @@ export const transactions: Transaction[] = [
 ];
 
 export const chargeRequests: ChargeRequest[] = [
-  { id: 1, userId: 2, amount: 1500, bank_ticket: PLACEHOLDER_IMAGE(101), status: 'pending', User: { id: 2, username: 'Mona' }, createdAt: '2024-08-18T10:00:00.000Z' },
-  { id: 2, userId: 7, amount: 2000, bank_ticket: PLACEHOLDER_IMAGE(102), status: 'pending', User: { id: 7, username: 'Mohanad' }, createdAt: '2024-08-19T10:00:00.000Z' },
-  { id: 3, userId: 8, amount: 3500, bank_ticket: PLACEHOLDER_IMAGE(103), status: 'pending', User: { id: 8, username: 'Ramy' }, createdAt: '2024-08-18T10:00:00.000Z' },
-  { id: 4, userId: 9, amount: 1500, bank_ticket: PLACEHOLDER_IMAGE(104), status: 'pending', User: { id: 9, username: 'Dyaa' }, createdAt: '2024-08-18T10:00:00.000Z' },
+  { id: 1, userId: 2, amount: 1500, bank_ticket: uploadImg, status: 'pending', User: { id: 2, username: 'Mona' }, createdAt: '2024-08-18T10:00:00.000Z' },
+  { id: 2, userId: 7, amount: 2000, bank_ticket: uploadImg, status: 'pending', User: { id: 7, username: 'Mohanad' }, createdAt: '2024-08-19T10:00:00.000Z' },
+  { id: 3, userId: 8, amount: 3500, bank_ticket: uploadImg, status: 'pending', User: { id: 8, username: 'Ramy' }, createdAt: '2024-08-18T10:00:00.000Z' },
+  { id: 4, userId: 9, amount: 1500, bank_ticket: uploadImg, status: 'pending', User: { id: 9, username: 'Dyaa' }, createdAt: '2024-08-18T10:00:00.000Z' },
 ];
 
 export const deleteProfileRequests: DeleteProfileRequest[] = [
@@ -165,6 +184,5 @@ export const visitorStats: VisitorStat[] = [
   { id: 12, Month: 'December', Visitors: 300 },
 ];
 
-// Runtime state for password reset flow
 export let resetEmail = '';
 export let verificationCode = '123456';

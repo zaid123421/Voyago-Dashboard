@@ -22,7 +22,11 @@ export function AttractionsListPage() {
       {!isLoading && !isError && data?.length === 0 && <EmptyState message="No attractions" />}
       <div className="trips-container attractions-container">
         {data?.map((attraction) => (
-          <div key={attraction.id} style={{ backgroundImage: `url(${attraction.Images[0]?.url})` }}>
+          <div
+            key={attraction.id}
+            className="trip-card"
+            style={{ backgroundImage: `url(${attraction.Images[0]?.url})` }}
+          >
             <div className="head">
               <div className="fs-14">
                 <i className="fa-solid fa-star mr-5" />

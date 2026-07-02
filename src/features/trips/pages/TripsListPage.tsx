@@ -7,6 +7,55 @@ import { FloatingAddLink, PageHeader, useConfirmDialog } from '@/shared/componen
 import { formatTripDate } from '@/shared/utils';
 import type { TripCard } from '@/shared/types';
 
+function TripCardItem({
+  trip,
+  onDelete,
+}: {
+  trip: TripCard;
+  onDelete: () => void;
+}) {
+  const imageUrl = trip.images[0]?.url ?? '';
+  const reserved = trip.rate.capacity - trip.rate.available_capacity;
+
+  return (
+    <div className="trip-card" style={{ backgroundImage: `url(${imageUrl})` }}>
+      <div className="head">
+        <i
+          role="button"
+          tabIndex={0}
+          onClick={onDelete}
+          onKeyDown={() => {}}
+          className="fa-regular fa-trash-can trip-trash fs-14"
+        />
+        <div className="fs-14">
+          <i className="fa-solid fa-star mr-5" />
+          <span className="fw-600">{trip.rate.rate}</span>
+        </div>
+      </div>
+      <div className="card-info">
+        <h3 className="fw-600">{trip.rate.name}</h3>
+        <div className="mb-5">
+          <span className="how">{reserved} / {trip.rate.capacity} reserved</span>
+          <span className="state">{trip.rate.avilable === 1 ? 'Available' : 'Not Available'}</span>
+        </div>
+        <div className="mb-5">
+          <i className="fa-solid fa-location-dot mr-10" />
+          <span className="fs-14">{trip.Destenation}</span>
+        </div>
+        <div className="mb-5">
+          <i className="fa-regular fa-calendar-days mr-10" />
+          <span className="fs-14">{formatTripDate(trip.rate.start_date, trip.rate.end_date)}</span>
+        </div>
+        <div>
+          <i className="fa-solid fa-clock mr-10" />
+          <span className="fs-14">{trip.duration} day(s)</span>
+        </div>
+        <span className="fs-14 price">From ${trip.rate.trip_price}</span>
+      </div>
+    </div>
+  );
+}
+
 export function TripsListPage() {
   const queryClient = useQueryClient();
   const { confirm, dialog } = useConfirmDialog();
@@ -35,50 +84,16 @@ export function TripsListPage() {
       {isError && <ErrorState onRetry={() => refetch()} />}
       {!isLoading && !isError && data?.length === 0 && <EmptyState message="No trips" />}
       <div className="trips-container">
-        {data?.map((trip) => {
-          const imageUrl = trip.images[0]?.url ?? '';
-          const reserved = trip.rate.capacity - trip.rate.available_capacity;
-          return (
-            <div key={trip.rate.id} style={{ backgroundImage: `url(${imageUrl})` }}>
-              <div className="head">
-                <i
-                  role="button"
-                  tabIndex={0}
-                  onClick={async () => {
-                    const ok = await confirm('Delete Trip', `Delete ${trip.rate.name}?`);
-                    if (ok) deleteMutation.mutate(trip.rate.id);
-                  }}
-                  onKeyDown={() => {}}
-                  className="fa-regular fa-trash-can trip-trash fs-14"
-                />
-                <div className="fs-14">
-                  <i className="fa-solid fa-star mr-5" />
-                  <span className="fw-600">{trip.rate.rate}</span>
-                </div>
-              </div>
-              <div className="card-info">
-                <h3 className="fw-600">{trip.rate.name}</h3>
-                <div className="mb-5">
-                  <span className="how">{reserved} / {trip.rate.capacity} reserved</span>
-                  <span className="state">{trip.rate.avilable === 1 ? 'Available' : 'Not Available'}</span>
-                </div>
-                <div className="mb-5">
-                  <i className="fa-solid fa-location-dot mr-10" />
-                  <span className="fs-14">{trip.Destenation}</span>
-                </div>
-                <div className="mb-5">
-                  <i className="fa-regular fa-calendar-days mr-10" />
-                  <span className="fs-14">{formatTripDate(trip.rate.start_date, trip.rate.end_date)}</span>
-                </div>
-                <div>
-                  <i className="fa-solid fa-clock mr-10" />
-                  <span className="fs-14">{trip.duration} day(s)</span>
-                </div>
-                <span className="fs-14 price">From ${trip.rate.trip_price}</span>
-              </div>
-            </div>
-          );
-        })}
+        {data?.map((trip) => (
+          <TripCardItem
+            key={trip.rate.id}
+            trip={trip}
+            onDelete={async () => {
+              const ok = await confirm('Delete Trip', `Delete ${trip.rate.name}?`);
+              if (ok) deleteMutation.mutate(trip.rate.id);
+            }}
+          />
+        ))}
       </div>
       <FloatingAddLink to="/addtrip" />
       {dialog}

@@ -50,7 +50,9 @@
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  transition: all 0.4s ease-in-out;
+}
+a, button, input, select, textarea, .item-link, .table-icon, .trip-trash, .floating-button {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 body {
   background-color: var(--body-background);
@@ -96,19 +98,49 @@ body {
   color: gray;
 }
 .second-input {
-  margin-top: 20px;
-  width: 75px;
+  margin-top: 0;
+  width: 58px;
   text-align: center;
-  height: 75px;
+  height: 58px;
   border-radius: 10px !important;
-  margin-right: 10px;
-  padding: 0 20px;
-  font-size: 40px;
+  margin-right: 0;
+  padding: 0;
+  font-size: 28px;
   outline: none;
   border: 2px solid transparent;
   background-color: var(--login-input-color);
   caret-color: var(--font-color);
   color: var(--font-color);
+  flex-shrink: 0;
+}
+.five-fields {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 24px;
+  position: relative;
+  box-sizing: border-box;
+}
+.five-fields .second-input {
+  margin-bottom: 0 !important;
+}
+.auth-card .first-child form {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error-verify {
+  position: static;
+  transform: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
 }
 .second-input:focus {
   border: 2px solid #a04df6;
@@ -449,6 +481,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px 30px;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 .auth-card .second-child {
   width: 50%;
@@ -457,21 +491,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  padding: 24px;
 }
 .auth-card .second-child .login-text {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 0;
   color: white;
+  flex-shrink: 0;
 }
 .auth-card .second-child h1 {
-  margin-top: 40px;
+  margin-top: 0;
   font-size: 26px;
 }
-.logo {
-  width: 250px;
-  transform: translate(15px, 75px);
+.logo,
+.admin-logo {
+  width: min(250px, 75%);
+  max-height: 220px;
+  object-fit: contain;
+  margin-top: 24px;
+  transform: none;
 }
 .auth-card .first-child button:hover{
   cursor: pointer;
@@ -489,13 +532,19 @@ body {
   color: #a04df6;
 }
 .second-child .forgot-password-img {
-  width: 350px;
-  transform: translate(60px,100px);
+  width: min(350px, 85%);
+  max-height: 320px;
+  object-fit: contain;
+  transform: none;
+  margin: auto;
 }
 .back-to-login a {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 .back-to-login a:hover,
 .back-to-login a:hover i {
@@ -506,8 +555,11 @@ body {
   color: var(--font-color);
 }
 .verify-img {
-  width: 300px;
-  transform: translate(30px, 175px);
+  width: min(300px, 80%);
+  max-height: 280px;
+  object-fit: contain;
+  transform: none;
+  margin: auto;
 }
 .table-container {
   overflow-x: auto;
@@ -544,21 +596,40 @@ body {
     margin-right: 0;
   }
   .auth-card .second-child {
-    background-image: none;
-    display: flex;
-    justify-content: center;
+    background-image: linear-gradient(225deg, #170057, #A04DF6);
+    width: 100%;
+    min-height: 220px;
+    border-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 20px;
   }
   .logo {
-    width: 150px;
-    margin-right: 20px;
-    margin-top: -40px;
+    width: min(140px, 40vw);
+    margin-top: 12px;
+    margin-right: 0;
   }
   .admin-logo,
-  .verify-img,
-  .lightlogo,
-  .darklogo,
-  .auth-card .second-child .login-text,
+  .verify-img {
+    width: min(200px, 55vw);
+    max-height: 160px;
+  }
   .second-child .forgot-password-img {
+    display: block;
+    width: min(240px, 70vw);
+    max-height: 180px;
+  }
+  .auth-card .second-child .login-text {
+    display: block;
+    margin-top: 0;
+  }
+  .auth-card .second-child .login-text h1 {
+    font-size: 20px;
+  }
+  .auth-card .second-child .login-text p {
+    font-size: 14px !important;
+  }
+  .lightlogo,
+  .darklogo {
     display: none;
   }
   .auth-card .first-child div {
@@ -575,8 +646,18 @@ body {
     margin-right: 0;
     width: 100%;
   }
-  .error-verify {
-    transform: translate(-5px, 60px) !important;
+  .five-fields {
+    gap: 8px;
+    padding: 0 4px;
+  }
+  .five-fields .second-input {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+  .auth-card .first-child form {
+    max-width: 100%;
+    padding: 0 8px;
   }
   .auth-card .first-child > div div {
     display: flex;
@@ -669,15 +750,15 @@ body {
     margin-right: 20px;
     margin-top: -10px;
   }
-  .second-input {
-    padding: 5px;
-    width: 50px;
-    height: 50px;
-    font-size: 14px;
-    margin-right: 7px !important;
+  .five-fields .second-input {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    padding: 0;
+    margin-right: 0 !important;
   }
-  .error-verify {
-    transform: translate(-5px, 40px) !important;
+  .five-fields {
+    gap: 6px;
   }
   .sidebar {
     width: 60px !important;
@@ -1194,9 +1275,6 @@ select,
 .error-forgot {
   transform: translate(5px, 240px);
 }
-.error-verify {
-  transform: translate(-5px, 55px);
-}
 .error-set-password {
   transform: translate(5px, -10px);
 }
@@ -1219,7 +1297,8 @@ select,
   grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
   gap: 20px;
 }
-.trips-container > div {
+.trips-container > div,
+.trip-card {
   height: 350px;
   border-radius: 15px;
   padding: 20px;
@@ -1233,13 +1312,16 @@ select,
   border: 4px solid var(--body-background);
   position: relative;
 }
-.trips-container > div:hover {
+.trips-container > div:hover,
+.trip-card:hover {
   border: 4px solid var(--table-icon-color-hover);
 }
-.attractions-container > div {
+.attractions-container > div,
+.attractions-container .trip-card {
   height: 250px !important;
 }
-.trips-container > div::before {
+.trips-container > div::before,
+.trip-card::before {
   content: '';
   position: absolute;
   z-index: 2;
@@ -1250,11 +1332,13 @@ select,
   top: 0;
   background: linear-gradient(to bottom, rgba(10,0,37,0), rgba(32,32,32,0.7));
 }
-.trips-container > div * {
+.trips-container > div *,
+.trip-card * {
   position: relative;
   z-index: 3
 }
-.trips-container > div div .price {
+.trips-container > div div .price,
+.trip-card div .price {
   background-color: rgba(140, 65, 239, 1);
   padding: 4px 10px;
   border-radius: 12px;
@@ -1263,28 +1347,35 @@ select,
   margin-left: auto;
   font-size: 13px;
 }
-.trips-container > div div i {
+.trips-container > div div i,
+.trip-card div i {
   width: 15px;
 }
 .trips-container > div .how,
-.trips-container > div .state {
+.trips-container > div .state,
+.trip-card .how,
+.trip-card .state {
   padding: 4px 10px;
   border-radius: 12px;
   margin: 10px 10px 5px 0;
   display: inline-block;
   font-size: 13px;
 }
-.trips-container > div .how {
+.trips-container > div .how,
+.trip-card .how {
   background-color: rgba(255,255,255,0.3);
 }
-.trips-container > div .state {
+.trips-container > div .state,
+.trip-card .state {
   background-color: rgba(167,109,242,1);
 }
-.trips-container > div .head {
+.trips-container > div .head,
+.trip-card .head {
   display: flex;
   justify-content: space-between;
 }
-.trips-container > div .head .trip-trash {
+.trips-container > div .head .trip-trash,
+.trip-card .head .trip-trash {
   background-color: rgba(160,77,246,1);
   border-radius: 16px;
   padding: 5px 17px;
@@ -1292,10 +1383,12 @@ select,
   justify-content: center;
   cursor: pointer;
 }
-.trips-container > div .head .trip-trash:hover {
+.trips-container > div .head .trip-trash:hover,
+.trip-card .head .trip-trash:hover {
   background-color: rgb(105, 52, 162);
 }
-.trips-container > div .head > div {
+.trips-container > div .head > div,
+.trip-card .head > div {
   display: flex;
   align-items: center;
   background-color: rgba(37, 37, 37, 0.6);
@@ -1303,7 +1396,8 @@ select,
   border-radius: 20px;
   color: white;
 }
-.trips-container > div .head > div i {
+.trips-container > div .head > div i,
+.trip-card .head > div i {
   color: rgba(252, 210, 64, 1);
 }
 .deposit {
@@ -2000,6 +2094,7 @@ ul {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.header img,
 .header-avatar {
   width: 48px;
   height: 48px;
@@ -2028,9 +2123,133 @@ ul {
 .add-trip-card {
   max-width: 500px;
 }
+.add-trip-page.content {
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+.transactions-header {
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .page-header-row {
   flex-wrap: wrap;
   gap: 16px;
 }
 .text-c { text-align: center; }
+
+/* Modern Voyago Modals */
+.voyago-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  animation: voyago-fade-in 0.2s ease;
+}
+.voyago-modal {
+  width: 100%;
+  background: var(--cards-color);
+  border: 1px solid rgba(160, 77, 246, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  animation: voyago-slide-up 0.25s ease;
+  overflow: hidden;
+}
+.voyago-modal--sm { max-width: 420px; }
+.voyago-modal--md { max-width: 560px; }
+.voyago-modal--lg { max-width: 720px; }
+.voyago-modal--image { max-width: 900px; }
+.voyago-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px 0;
+}
+.voyago-modal__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--font-color);
+}
+.voyago-modal__close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--table-icon-background);
+  color: var(--font-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.voyago-modal__close:hover {
+  background: var(--table-icon-color-hover);
+  color: #fff;
+}
+.voyago-modal__body {
+  padding: 20px 24px 24px;
+}
+.voyago-modal__message {
+  color: var(--input-font-color);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.voyago-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+.voyago-btn {
+  min-width: 100px;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.voyago-btn--ghost {
+  background: var(--table-icon-background);
+  color: var(--font-color);
+}
+.voyago-btn--ghost:hover {
+  opacity: 0.85;
+}
+.voyago-btn--primary,
+.voyago-btn--danger {
+  background: linear-gradient(to bottom, #6c30ba, #5724a2);
+  color: #fff;
+}
+.voyago-btn--danger:hover,
+.voyago-btn--primary:hover {
+  filter: brightness(1.08);
+}
+.voyago-modal__image {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  background: var(--table-body);
+}
+.chart-skeleton {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes voyago-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes voyago-slide-up {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
 

@@ -6,7 +6,7 @@ import { useEmail } from '@/shared/context/EmailContext';
 import { ApiError } from '@/api/errors';
 
 export function SetNewPasswordPage() {
-  const { email } = useEmail();
+  const { email, verificationCode, clearResetFlow } = useEmail();
   const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
@@ -17,9 +17,15 @@ export function SetNewPasswordPage() {
     e.preventDefault();
     setSubmitted(true);
     if (password.length < 8 || password !== confirm) return;
+    if (!verificationCode) {
+      toast.error('Verification expired. Please request a new code.');
+      navigate('/forgotpassword');
+      return;
+    }
     setLoading(true);
     try {
-      await authApi.resetPassword(email, password, 123456);
+      await authApi.resetPassword(email, password, verificationCode);
+      clearResetFlow();
       toast.success('Password updated successfully');
       navigate('/');
     } catch (err) {

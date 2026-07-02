@@ -4,7 +4,7 @@ import { authApi } from '@/api/endpoints';
 import { useEmail } from '@/shared/context/EmailContext';
 import { ApiError } from '@/api/errors';
 
-const IMG_URL = 'https://api.dicebear.com/7.x/icons/svg?seed=forgot';
+import { forgotPasswordImg } from '@/shared/assets/images';
 
 export function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
@@ -59,7 +59,7 @@ export function ForgotPasswordPage() {
         </form>
       </div>
       <div className="second-child">
-        <img className="forgot-password-img" src={IMG_URL} alt="Forgot password" />
+        <img className="forgot-password-img" src={forgotPasswordImg} alt="Forgot password" />
       </div>
     </div>
   );
