@@ -20,5 +20,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/Pages", "src/Components", "node_modules", "dist"]
 }
